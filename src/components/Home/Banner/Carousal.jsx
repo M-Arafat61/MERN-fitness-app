@@ -11,7 +11,8 @@ import slide3 from "../../../assets/Images/Banner/group-workout.jpg";
 import slide4 from "../../../assets/Images/Banner/girl-stats.jpg";
 import slide5 from "../../../assets/Images/Banner/young-woman-spinning-class.jpg";
 import Container from "../../Shared/Container/Container";
-import { Icon } from "@iconify/react";
+import CarousalContent from "./CarousalContent";
+import CarousalSpinner from "./CarousalSpinner";
 
 const Carousal = () => {
   return (
@@ -33,32 +34,90 @@ const Carousal = () => {
       >
         <SwiperSlide>
           <div className='relative'>
-            <img src={slide1} alt='' />
-            <div className='bg-white '>
-              <div className='absolute top-48 left-14 bg-white rounded-md p-4'>
-                <Icon
-                  className='text-4xl text-black animate-spin'
-                  icon='fontisto:spinner-cog'
-                ></Icon>
-              </div>
-            </div>
+            <img
+              className='md:h-[600px] w-full rounded-lg overflow-hidden object-cover'
+              src={slide1}
+              alt=''
+            />
+            <CarousalSpinner />
+            <CarousalContent
+              title={" Unite for Fitness Success!"}
+              description={
+                " Experience the power of synchronized fitness for a healthier lifestyle."
+              }
+              moreDescription={
+                "SyncFit fosters a community-driven approach to fitness. Connect, collaborate, and conquer goals together."
+              }
+            ></CarousalContent>
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
-          <img src={slide2} alt='' />
+          <img
+            className='md:h-[600px] w-full rounded-lg overflow-hidden object-cover'
+            src={slide2}
+            alt=''
+          />
+          <CarousalSpinner />
+          <CarousalContent
+            title={" Elevate Your Fitness with SyncFit!"}
+            description={
+              "SyncFit empowers you to elevate your fitness journey. "
+            }
+            moreDescription={
+              "Sync workouts, inspire one another, and achieve milestones as a cohesive fitness community. Your ultimate path to success starts here."
+            }
+          ></CarousalContent>
         </SwiperSlide>
 
         <SwiperSlide>
-          <img src={slide3} alt='' />
+          <img
+            className='md:h-[600px] w-full rounded-lg overflow-hidden object-cover'
+            src={slide3}
+            alt=''
+          />
+          <CarousalSpinner />
+          <CarousalContent
+            title={"SyncFit: Sync, Sweat, Succeed!"}
+            description={
+              "Synchronize efforts, sweat together, and achieve success. "
+            }
+            moreDescription={
+              "With SyncFit. Seamlessly sync workouts, support peers, and unlock a world of fitness triumphs. Together, unstoppable."
+            }
+          ></CarousalContent>
         </SwiperSlide>
 
         <SwiperSlide>
-          <img src={slide4} alt='' />
+          <img
+            className='md:h-[600px] w-full rounded-lg overflow-hidden object-cover'
+            src={slide4}
+            alt=''
+          />
+          <CarousalSpinner />
+          <CarousalContent
+            title={"Your Fitness Companion!"}
+            description={"Discover SyncFit, your ultimate fitness companion. "}
+            moreDescription={
+              "Sync up with friends, challenge each other, and celebrate victories together. Fuel your motivation and crush fitness barriers."
+            }
+          ></CarousalContent>
         </SwiperSlide>
 
         <SwiperSlide>
-          <img src={slide5} alt='' />
+          <img
+            className='md:h-[600px] w-full rounded-lg overflow-hidden object-cover'
+            src={slide5}
+            alt=''
+          />
+          <CarousalSpinner />
+          <CarousalContent
+            title={"Forge Fitness Bonds with SyncFit!"}
+            description={"Forge unbreakable fitness bonds with SyncFit."}
+            moreDescription={
+              "Join forces, share achievements, and embark on a collaborative fitness adventure. Transform aspirations into accomplishments, united."
+            }
+          ></CarousalContent>
         </SwiperSlide>
       </Swiper>
     </Container>
