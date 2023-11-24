@@ -12,8 +12,8 @@ import yogaImg from "../../../assets/Images/Features/yoga.jpg";
 const Features = () => {
   return (
     <Container>
-      <div className='mt-10'>
-        <div>SyncFit Features</div>
+      <div className='mt-16'>
+        <div className='text-5xl uppercase font-bold mb-10'>Our Features</div>
         <div className='grid grid-cols-3 gap-5'>
           <FeaturesCard
             cardImage={personalizedImg}
