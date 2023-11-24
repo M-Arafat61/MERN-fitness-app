@@ -9,6 +9,7 @@ import {
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../authentication/firebase.config";
+import { axiosPublic } from "../hooks/useAxiosPublic";
 
 // import { axiosPublic } from "../hooks/useAxiosPublic";
 
@@ -48,18 +49,18 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, currentUser => {
       setUser(currentUser);
       console.log("current user from auth state--->>", user?.email || user);
-      //   if (currentUser) {
-      //     const userInfo = { email: currentUser.email };
-      //     axiosPublic.post("/jwt", userInfo).then(res => {
-      //       if (res.data.token) {
-      //         localStorage.setItem("access-token", res.data.token);
-      //         setLoading(false);
-      //       }
-      //     });
-      //   } else {
-      //     localStorage.removeItem("access-token");
-      //     setLoading(false);
-      //   }
+      if (currentUser) {
+        const userInfo = { email: currentUser.email };
+        axiosPublic.post("/jwt", userInfo).then(res => {
+          if (res.data.token) {
+            localStorage.setItem("access-token", res.data.token);
+            setLoading(false);
+          }
+        });
+      } else {
+        localStorage.removeItem("access-token");
+        setLoading(false);
+      }
     });
     return () => {
       return unsubscribe;

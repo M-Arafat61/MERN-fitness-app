@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import Container from "../Container/Container";
 import CustomNavLink from "./CustomNavLink";
+import useAuth from "../../../hooks/useAuth";
 
 const Navbar = () => {
+  const { user, logout } = useAuth();
+  const handleLogout = () => {
+    logout();
+  };
   const navItems = (
     <div className='md:flex text-lg'>
       <div className='mr-2'>
@@ -61,9 +66,32 @@ const Navbar = () => {
         <div className='navbar-center hidden md:flex'>
           <ul className='menu menu-horizontal'>{navItems}</ul>
         </div>
-        <div className='navbar-end'>
-          <Link to='/login'>Login</Link>
-        </div>
+        {user ? (
+          <>
+            <div className='navbar-end flex flex-col items-end gap-5'>
+              <div className='avatar'>
+                <div className='w-12 mask mask-squircle'>
+                  <img src={user?.photoURL} alt='' />
+                </div>
+              </div>
+              <Link
+                onClick={handleLogout}
+                className='hover:font-bold text-xl '
+                to='/login'
+              >
+                Logout
+              </Link>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className='navbar-end'>
+              <Link className='text-xl hover:font-bold' to='/login'>
+                Login
+              </Link>
+            </div>
+          </>
+        )}
       </div>
     </Container>
   );
