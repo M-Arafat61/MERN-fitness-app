@@ -4,6 +4,10 @@ import Home from "../pages/Home/Home";
 import Gallery from "../pages/Gallery/Gallery";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import TrainerProfile from "../pages/Trainer/TrainerProfile";
+import TrainerDetails from "../pages/TrainerDetails/TrainerDetails";
+import { axiosPublic } from "../hooks/useAxiosPublic";
+import TrainerApplicationForm from "../pages/TrainerApplicationForm/TrainerApplicationForm";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +21,20 @@ const router = createBrowserRouter([
       {
         path: "gallery",
         element: <Gallery />,
+      },
+      {
+        path: "trainer",
+        element: <TrainerProfile />,
+      },
+      {
+        path: "/trainer-details/:id",
+        element: <TrainerDetails />,
+        loader: ({ params }) =>
+          axiosPublic.get(`/trainer-details/${params.id}`),
+      },
+      {
+        path: "/trainer-application-form",
+        element: <TrainerApplicationForm />,
       },
       {
         path: "login",

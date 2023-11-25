@@ -22,13 +22,13 @@ const Gallery = () => {
       return lastPage.prevOffset + 12;
     },
   });
-  console.log(data?.pages);
+  // console.log(data?.pages);
   const images = data?.pages.reduce((acc, page) => {
     const imagesArray = Object.values(page).flatMap(obj => obj.images || []);
 
     return acc.concat(imagesArray);
   }, []);
-  console.log(images);
+  // console.log(images);
   return (
     <Container>
       <div className='sticky bg-fixed bg-extended-teal py-10 top-0 z-50 text-center text-3xl font-bold rounded-t-2xl overflow-hidden text-white'>

@@ -1,0 +1,35 @@
+[
+  {
+    "name": "John Doe",
+    "profileImage": "https://i.ibb.co/Y7kcR32/pexels-sabel-blanco-1756959.jpg",
+    "experience": 5,
+    "social": {
+      "twitter": "https://twitter.com/johndoe",
+      "linkedin": "https://linkedin.com/in/johndoe",
+      "instagram": "https://instagram.com/johndoe"
+    },
+    "availableSlots": 6
+  },
+  {
+    "name": "Natasha Johnson",
+    "profileImage": "https://i.ibb.co/hc4YsWH/pexels-andrea-piacquadio-917653.jpg",
+    "experience": 2,
+    "social": {
+      "twitter": "https://twitter.com/alexjohnson",
+      "linkedin": "https://linkedin.com/in/alexjohnson",
+      "instagram": "https://instagram.com/alexjohnson"
+    },
+    "availableSlots": 7
+  },
+  {
+    "name": "Jane Smith",
+    "profileImage": "https://i.ibb.co/g793BnN/pexels-kuldeep-singhania-2105493.jpg",
+    "experience": 8,
+    "social": {
+      "twitter": "https://twitter.com/janesmith",
+      "linkedin": "https://linkedin.com/in/janesmith",
+      "instagram": "https://instagram.com/janesmith"
+    },
+    "availableSlots": 4
+  }
+]
