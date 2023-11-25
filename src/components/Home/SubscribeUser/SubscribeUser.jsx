@@ -14,7 +14,7 @@ const SubscribeUser = () => {
     axiosPublic
       .post("/subscriptions", subscriber)
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         if (res.data.insertedId) {
           toast.success("Thank You for subscription! 💕");
         }
