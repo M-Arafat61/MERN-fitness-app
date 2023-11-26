@@ -1,35 +1,212 @@
 [
   {
     "name": "John Doe",
+    "email": "j@d.com",
     "profileImage": "https://i.ibb.co/Y7kcR32/pexels-sabel-blanco-1756959.jpg",
-    "experience": 5,
+    "age": "40",
+    "experience": "5",
+    "availableDays": {
+      "sunday": false,
+      "monday": false,
+      "tuesday": false,
+      "wednesday": false,
+      "thursday": false,
+      "friday": false,
+      "saturday": true
+    },
+    "availableSlots": "3",
+    "skills": [
+      "Flexibility Training",
+      "Adaptability",
+      "Nutrition Knowledge",
+      "Injury Prevention",
+      "Functional Training",
+      "Goal Setting and Planning",
+      "Communication Skills"
+    ],
     "social": {
       "twitter": "https://twitter.com/johndoe",
       "linkedin": "https://linkedin.com/in/johndoe",
       "instagram": "https://instagram.com/johndoe"
     },
-    "availableSlots": 6
+    "timeSlotOfDays": {
+      "saturday": [
+        { "start": "08:00", "end": "09:00" },
+        { "start": "10:00", "end": "11:00" },
+        { "start": "20:00", "end": "21:00" }
+      ]
+    }
   },
   {
     "name": "Natasha Johnson",
+    "email": "n@j.com",
     "profileImage": "https://i.ibb.co/hc4YsWH/pexels-andrea-piacquadio-917653.jpg",
-    "experience": 2,
+    "age": "36",
+    "experience": "3",
+    "availableDays": {
+      "sunday": true,
+      "monday": false,
+      "tuesday": true,
+      "wednesday": false,
+      "thursday": true,
+      "friday": true,
+      "saturday": true
+    },
+    "availableSlots": "3",
+    "timeSlotOfDays": {
+      "sunday": [
+        { "start": "07:00", "end": "08:00" },
+        { "start": "08:30", "end": "09:30" },
+        { "start": "20:00", "end": "21:00" }
+      ],
+      "tuesday": [
+        { "start": "17:00", "end": "18:00" },
+        { "start": "19:00", "end": "20:00" },
+        { "start": "21:00", "end": "22:00" }
+      ],
+      "thursday": [
+        { "start": "07:00", "end": "08:00" },
+        { "start": "08:00", "end": "09:00" },
+        { "start": "09:00", "end": "10:00" }
+      ],
+      "friday": [
+        { "start": "17:00", "end": "18:00" },
+        { "start": "18:00", "end": "19:00" },
+        { "start": "19:00", "end": "20:00" }
+      ],
+      "saturday": [
+        { "start": "07:00", "end": "08:00" },
+        { "start": "08:30", "end": "09:30" },
+        { "start": "10:00", "end": "11:00" }
+      ]
+    },
+    "skills": [
+      "CPR and First Aid",
+      "Flexibility Training",
+      "Communication Skills",
+      "Goal Setting and Planning",
+      "Motivational Coaching",
+      "Functional Training"
+    ],
     "social": {
       "twitter": "https://twitter.com/alexjohnson",
       "linkedin": "https://linkedin.com/in/alexjohnson",
       "instagram": "https://instagram.com/alexjohnson"
-    },
-    "availableSlots": 7
+    }
   },
   {
-    "name": "Jane Smith",
-    "profileImage": "https://i.ibb.co/g793BnN/pexels-kuldeep-singhania-2105493.jpg",
-    "experience": 8,
-    "social": {
-      "twitter": "https://twitter.com/janesmith",
-      "linkedin": "https://linkedin.com/in/janesmith",
-      "instagram": "https://instagram.com/janesmith"
+    "name": "Alex Smith",
+    "email": "a@s.com",
+    "profileImage": "https://i.ibb.co/TBKJZQ1/portrait-expressive-young-man-wearing-formal-suit.jpg",
+    "age": "32",
+    "experience": "5",
+    "availableDays": ["tuesday", "thursday", "friday", "saturday", "sunday"],
+    "availableSlots": "5",
+    "timeSlotOfDays": {
+      "tuesday": [
+        { "start": "17:00", "end": "18:00" },
+        { "start": "18:30", "end": "19:30" },
+        { "start": "20:00", "end": "21:00" },
+        { "start": "21:30", "end": "22:30" },
+        { "start": "23:00", "end": "00:00" }
+      ],
+      "thursday": [
+        { "start": "07:00", "end": "08:00" },
+        { "start": "08:30", "end": "09:30" },
+        { "start": "10:00", "end": "11:00" },
+        { "start": "11:30", "end": "12:30" },
+        { "start": "13:00", "end": "14:00" }
+      ],
+      "friday": [
+        { "start": "16:00", "end": "17:00" },
+        { "start": "17:30", "end": "18:30" },
+        { "start": "19:00", "end": "20:00" },
+        { "start": "20:30", "end": "21:30" },
+        { "start": "22:00", "end": "23:00" }
+      ],
+      "saturday": [
+        { "start": "08:00", "end": "09:00" },
+        { "start": "09:30", "end": "10:30" },
+        { "start": "11:00", "end": "12:00" },
+        { "start": "12:30", "end": "13:30" },
+        { "start": "14:00", "end": "15:00" }
+      ],
+      "sunday": [
+        { "start": "07:00", "end": "08:00" },
+        { "start": "08:30", "end": "09:30" },
+        { "start": "10:00", "end": "11:00" },
+        { "start": "11:30", "end": "12:30" },
+        { "start": "13:00", "end": "14:00" }
+      ]
     },
-    "availableSlots": 4
+    "skills": [
+      "Functional Training",
+      "Nutrition Knowledge",
+      "Motivational Coaching",
+      "Goal Setting and Planning"
+    ],
+    "social": {
+      "twitter": "https://twitter.com/alexsmith_fit",
+      "linkedin": "https://linkedin.com/in/alexsmithfitness",
+      "instagram": "https://instagram.com/alexsmithfitness"
+    }
+  },
+  {
+    "name": "Emma Davis",
+    "email": "e@d.com",
+    "profileImage": "https://i.ibb.co/b5StYLR/pexels-alasdair-braxton-4804447.jpg",
+    "age": "29",
+    "experience": "5",
+    "availableDays": ["monday", "wednesday", "thursday", "friday", "saturday"],
+    "availableSlots": "5",
+    "timeSlotOfDays": {
+      "monday": [
+        { "start": "06:00", "end": "07:00" },
+        { "start": "07:30", "end": "08:30" },
+        { "start": "18:00", "end": "19:00" },
+        { "start": "20:30", "end": "21:30" },
+        { "start": "22:00", "end": "23:00" }
+      ],
+      "wednesday": [
+        { "start": "17:30", "end": "18:30" },
+        { "start": "19:30", "end": "20:30" },
+        { "start": "21:00", "end": "22:00" },
+        { "start": "22:30", "end": "23:30" },
+        { "start": "23:30", "end": "00:30" }
+      ],
+      "thursday": [
+        { "start": "08:00", "end": "09:00" },
+        { "start": "09:30", "end": "10:30" },
+        { "start": "11:00", "end": "12:00" },
+        { "start": "12:30", "end": "13:30" },
+        { "start": "14:00", "end": "15:00" }
+      ],
+      "friday": [
+        { "start": "16:00", "end": "17:00" },
+        { "start": "17:30", "end": "18:30" },
+        { "start": "19:00", "end": "20:00" },
+        { "start": "20:30", "end": "21:30" },
+        { "start": "22:00", "end": "23:00" }
+      ],
+      "saturday": [
+        { "start": "08:00", "end": "09:00" },
+        { "start": "09:30", "end": "10:30" },
+        { "start": "11:00", "end": "12:00" },
+        { "start": "12:30", "end": "13:30" },
+        { "start": "14:00", "end": "15:00" }
+      ]
+    },
+    "skills": [
+      "Goal Setting and Planning",
+      "Motivational Coaching",
+      "Functional Training",
+      "Flexibility Training",
+      "Strength and Conditioning"
+    ],
+    "social": {
+      "twitter": "https://twitter.com/emmadavis_fit",
+      "linkedin": "https://linkedin.com/in/emmadavisfitness",
+      "instagram": "https://instagram.com/emmadavisfitness"
+    }
   }
 ]

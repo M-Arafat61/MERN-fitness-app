@@ -10,6 +10,7 @@ import { axiosPublic } from "../hooks/useAxiosPublic";
 import TrainerApplicationForm from "../pages/TrainerApplicationForm/TrainerApplicationForm";
 import Forum from "../pages/Forum/Forum";
 import DashboardLayout from "../Layouts/DashboardLayout/DashboardLayout";
+import AllSubscribers from "../pages/Dashboard/Admin/AllSubscribers/AllSubscribers";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,12 @@ const router = createBrowserRouter([
   {
     path: "dashboard",
     element: <DashboardLayout />,
+    children: [
+      {
+        path: "subscribers",
+        element: <AllSubscribers />,
+      },
+    ],
   },
 ]);
 

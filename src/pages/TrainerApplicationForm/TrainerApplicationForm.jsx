@@ -62,6 +62,21 @@ const TrainerApplicationForm = () => {
     const profileImage = form.photo.value;
     const age = form.age.value;
     const experience = form.year.value;
+    const twitter = form.twitter.value;
+    const linkedin = form.linkedin.value;
+    const instagram = form.instagram.value;
+    const availableSlots = form.slot.value;
+
+    const timeSlotOfDays = Object.entries(timeSlots)
+      // eslint-disable-next-line no-unused-vars
+      .filter(([_, slots]) => slots.length > 0)
+      .reduce((obj, [key, value]) => {
+        obj[key] = value;
+        return obj;
+      }, {});
+
+    console.log(timeSlotOfDays);
+
     const trainerInfo = {
       name,
       email,
@@ -69,10 +84,16 @@ const TrainerApplicationForm = () => {
       age,
       experience,
       availableDays,
-      timeSlots,
+      availableSlots,
+      timeSlotOfDays,
       skills,
+      social: {
+        twitter: twitter,
+        linkedin: linkedin,
+        instagram: instagram,
+      },
     };
-    console.log(trainerInfo);
+    // console.log(trainerInfo);
     axiosSecure
       .post("/trainer-applications", trainerInfo)
       .then(res => {
@@ -160,6 +181,40 @@ const TrainerApplicationForm = () => {
                     required
                   />
                 </div>
+              </div>
+
+              <div className='form-control'>
+                <label className='label'>
+                  <span className='label-text'>Twitter</span>
+                </label>
+                <input
+                  type='text'
+                  placeholder='Twitter account URL'
+                  name='twitter'
+                  className='input input-bordered'
+                />
+              </div>
+              <div className='form-control'>
+                <label className='label'>
+                  <span className='label-text'>LinkedIn</span>
+                </label>
+                <input
+                  type='text'
+                  placeholder='LinkedIn account URL'
+                  name='linkedin'
+                  className='input input-bordered'
+                />
+              </div>
+              <div className='form-control'>
+                <label className='label'>
+                  <span className='label-text'>Instagram</span>
+                </label>
+                <input
+                  type='text'
+                  placeholder='Instagram account URL'
+                  name='instagram'
+                  className='input input-bordered'
+                />
               </div>
 
               <label>
@@ -347,7 +402,18 @@ const TrainerApplicationForm = () => {
                   </label>
                 </div>
               </label>
-
+              <div className='form-control w-full'>
+                <label className='label'>
+                  <span className=''>Available slot in a day</span>
+                </label>
+                <input
+                  type='number'
+                  placeholder='Available slot number in a day '
+                  name='slot'
+                  className='input input-bordered'
+                  required
+                />
+              </div>
               <label>
                 Available Time in a Day:
                 <div className='border border-extended-teal rounded-xl overflow-hidden p-5 mt-2'>

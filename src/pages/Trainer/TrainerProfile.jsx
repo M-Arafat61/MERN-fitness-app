@@ -13,7 +13,7 @@ const TrainerProfile = () => {
       return res.data;
     },
   });
-  console.log(trainerData);
+  // console.log(trainerData);
 
   return (
     <Container>
@@ -35,7 +35,6 @@ const TrainerProfile = () => {
                 Years of Experience: {trainer.experience}
               </p>
               <div className='flex mb-4'>
-                {/* Replace social links with actual icons or SVGs */}
                 <a href={trainer.social.twitter} className='mr-3 text-xl'>
                   <Icon icon='skill-icons:twitter'></Icon>
                 </a>
@@ -54,8 +53,20 @@ const TrainerProfile = () => {
                   Know More
                 </button>
               </Link>
+              <p>{trainerData?.timeSlots}</p>
             </div>
           ))}
+        </div>
+        <div className='flex mt-10  items-start p-6'>
+          <Link to='/trainer-application-form'>
+            <button className='px-16 uppercase hover:text-white font-bold  py-2 bg-extended-teal hover:bg-gradient-to-r from-fuchsia-700 to-violet-700 rounded-r-full overflow-hidden'>
+              Be a Trainer{" "}
+              <Icon
+                className='inline-flex text-2xl ml-2'
+                icon={"ant-design:form-outlined"}
+              ></Icon>
+            </button>
+          </Link>
         </div>
       </div>
     </Container>
