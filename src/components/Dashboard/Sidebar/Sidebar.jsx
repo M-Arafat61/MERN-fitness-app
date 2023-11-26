@@ -1,9 +1,17 @@
-import AdminLists from "./AdminLists";
+import AdminDashboardLists from "./AdminDashboardLists";
+import TrainerDashboardLists from "./TrainerDashboardLists";
 
 const Sidebar = () => {
   return (
     <div>
-      <AdminLists />
+      <AdminDashboardLists />
+      <hr />
+      <br />
+      <br />
+
+      <hr />
+
+      <TrainerDashboardLists />
     </div>
   );
 };

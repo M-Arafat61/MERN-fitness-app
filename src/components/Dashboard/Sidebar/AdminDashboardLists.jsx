@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import Container from "../../Shared/Container/Container";
 import { Icon } from "@iconify/react";
 
-const AdminLists = () => {
+const AdminDashboardLists = () => {
   return (
     <Container>
       <ul className='pl-10 text-lg font-medium gap-2 space-y-2 tracking-wider uppercase'>
@@ -57,4 +57,4 @@ const AdminLists = () => {
   );
 };
 
-export default AdminLists;
+export default AdminDashboardLists;

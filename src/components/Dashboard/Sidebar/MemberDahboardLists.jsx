@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import Container from "../../Shared/Container/Container";
 import { Icon } from "@iconify/react";
 
-const MemberLists = () => {
+const MemberDahboardLists = () => {
   return (
     <Container>
       <div className='space-y-8'>
@@ -55,4 +55,4 @@ const MemberLists = () => {
   );
 };
 
-export default MemberLists;
+export default MemberDahboardLists;

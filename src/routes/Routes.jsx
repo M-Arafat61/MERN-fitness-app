@@ -11,6 +11,11 @@ import TrainerApplicationForm from "../pages/TrainerApplicationForm/TrainerAppli
 import Forum from "../pages/Forum/Forum";
 import DashboardLayout from "../Layouts/DashboardLayout/DashboardLayout";
 import AllSubscribers from "../pages/Dashboard/Admin/AllSubscribers/AllSubscribers";
+import BookingSlot from "../pages/BookingSlot/BookingSlot";
+
+import AddNewClass from "../pages/Dashboard/Trainer/AddNewClass/AddNewClass";
+
+import AddNewForumPost from "../pages/Dashboard/Shared/AddNewForumPost";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +41,10 @@ const router = createBrowserRouter([
           axiosPublic.get(`/trainer-details/${params.id}`),
       },
       {
+        path: "booking-slot/:day/:index",
+        element: <BookingSlot />,
+      },
+      {
         path: "/trainer-application-form",
         element: <TrainerApplicationForm />,
       },
@@ -57,9 +66,19 @@ const router = createBrowserRouter([
     path: "dashboard",
     element: <DashboardLayout />,
     children: [
+      // admin routes
       {
         path: "subscribers",
         element: <AllSubscribers />,
+      },
+      // trainer routes
+      {
+        path: "add-class",
+        element: <AddNewClass />,
+      },
+      {
+        path: "add-forum",
+        element: <AddNewForumPost />,
       },
     ],
   },
