@@ -8,6 +8,8 @@ import TrainerProfile from "../pages/Trainer/TrainerProfile";
 import TrainerDetails from "../pages/TrainerDetails/TrainerDetails";
 import { axiosPublic } from "../hooks/useAxiosPublic";
 import TrainerApplicationForm from "../pages/TrainerApplicationForm/TrainerApplicationForm";
+import Forum from "../pages/Forum/Forum";
+import DashboardLayout from "../Layouts/DashboardLayout/DashboardLayout";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +39,10 @@ const router = createBrowserRouter([
         element: <TrainerApplicationForm />,
       },
       {
+        path: "/community",
+        element: <Forum />,
+      },
+      {
         path: "login",
         element: <Login />,
       },
@@ -45,6 +51,10 @@ const router = createBrowserRouter([
         element: <Register />,
       },
     ],
+  },
+  {
+    path: "dashboard",
+    element: <DashboardLayout />,
   },
 ]);
 
