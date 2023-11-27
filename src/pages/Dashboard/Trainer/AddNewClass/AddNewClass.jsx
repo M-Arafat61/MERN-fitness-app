@@ -11,6 +11,7 @@ const AddNewClass = () => {
     const form = e.target;
     const title = form.title.value;
     const instructor = form.instructor.value;
+    const email = form.email.value;
     const description = form.description.value;
     const location = form.location.value;
     const difficulty = form.difficulty.value;
@@ -18,6 +19,7 @@ const AddNewClass = () => {
     const classData = {
       title,
       instructor,
+      email,
       description,
       location,
       difficulty,
@@ -61,6 +63,19 @@ const AddNewClass = () => {
                 placeholder='Instructor'
                 name='instructor'
                 defaultValue={user?.displayName}
+                readOnly
+                className='input input-bordered'
+              />
+            </div>
+            <div className='form-control'>
+              <label className='label'>
+                <span className='label-text'>Instructor Email</span>
+              </label>
+              <input
+                type='text'
+                placeholder='Email'
+                name='email'
+                defaultValue={user?.email}
                 readOnly
                 className='input input-bordered'
               />

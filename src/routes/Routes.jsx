@@ -14,6 +14,7 @@ import AllSubscribers from "../pages/Dashboard/Admin/AllSubscribers/AllSubscribe
 import BookingSlot from "../pages/BookingSlot/BookingSlot";
 import AddNewClass from "../pages/Dashboard/Trainer/AddNewClass/AddNewClass";
 import AddNewForumPost from "../pages/Dashboard/Shared/AddNewForumPost";
+import Classes from "../pages/Classes/Classes";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
         element: <TrainerDetails />,
         loader: ({ params }) =>
           axiosPublic.get(`/trainer-details/${params.id}`),
+      },
+      {
+        path: "classes",
+        element: <Classes />,
       },
       {
         path: "booking-slot/:id/:day/:index",

@@ -3,14 +3,16 @@ import Container from "../../components/Shared/Container/Container";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import useAuth from "../../hooks/useAuth";
 
 const BookingSlot = () => {
   const axiosSecure = useAxiosSecure();
-  const { id, day, index } = useParams();
-
   const [packages, setPackages] = useState([]);
   const [classes, setClasses] = useState([]);
   const [trainer, setTrainer] = useState({});
+  const { id, day, index } = useParams();
+
+  const { user } = useAuth();
 
   useEffect(() => {
     const fetchPackages = async () => {
@@ -48,8 +50,9 @@ const BookingSlot = () => {
       package: eachPackage,
       classes: filteredClass,
       trainer: trainer.name,
+      userEmail: user?.email,
       trainerEmail: trainer.email,
-      classTime: classTime,
+      classTime: { classTime, day },
     };
 
     try {
@@ -65,6 +68,7 @@ const BookingSlot = () => {
     } catch (error) {
       toast.error(error.message);
     }
+    console.log(bookedPackage);
   };
 
   return (
