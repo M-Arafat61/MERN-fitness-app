@@ -12,9 +12,7 @@ import Forum from "../pages/Forum/Forum";
 import DashboardLayout from "../Layouts/DashboardLayout/DashboardLayout";
 import AllSubscribers from "../pages/Dashboard/Admin/AllSubscribers/AllSubscribers";
 import BookingSlot from "../pages/BookingSlot/BookingSlot";
-
 import AddNewClass from "../pages/Dashboard/Trainer/AddNewClass/AddNewClass";
-
 import AddNewForumPost from "../pages/Dashboard/Shared/AddNewForumPost";
 
 const router = createBrowserRouter([
@@ -41,7 +39,7 @@ const router = createBrowserRouter([
           axiosPublic.get(`/trainer-details/${params.id}`),
       },
       {
-        path: "booking-slot/:day/:index",
+        path: "booking-slot/:id/:day/:index",
         element: <BookingSlot />,
       },
       {

@@ -1,15 +1,12 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 import Container from "../../components/Shared/Container/Container";
 
 const TrainerDetails = () => {
   const trainerData = useLoaderData();
-
-  // const location = useLocation();
-  // console.log(trainerData.data);
   const timeSlot = trainerData?.data?.timeSlotOfDays;
 
-  console.log(timeSlot);
+  const { id } = useParams();
 
   return (
     <Container>
@@ -27,7 +24,7 @@ const TrainerDetails = () => {
             <h3 className='font-bold'>{day.toUpperCase()}</h3>
             <ul className='flex border justify-between mb-5 p-4 items-center'>
               {timeSlot[day].map((time, index) => (
-                <Link to={`/booking-slot/${day}/${index}`} key={index}>
+                <Link to={`/booking-slot/${id}/${day}/${index}`} key={index}>
                   <div className='p-3 hover:bg-extended-teal rounded-lg hover:text-white'>
                     <p className='font-medium underline'>Slot-{index + 1}</p>
                     <li className='hover:italic'>{`From ${time.start} - To ${time.end}`}</li>

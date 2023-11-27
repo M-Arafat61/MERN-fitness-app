@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Silver",
+    "fee": 100,
+    "facilities": [
+      "Access to gym equipment",
+      "Two personal training sessions per month",
+      "Group fitness classes",
+      "Locker room access"
+    ],
+    "className": "bg-blue-100"
+  },
+  {
+    "name": "Gold",
+    "fee": 150,
+    "facilities": [
+      "All Silver package facilities",
+      "Four additional personal training sessions per month",
+      "Sauna and spa access",
+      "Nutritional guidance"
+    ],
+    "className": "bg-yellow-100"
+  },
+  {
+    "name": "Diamond",
+    "fee": 200,
+    "facilities": [
+      "All Gold package facilities",
+      "Unlimited personal training sessions",
+      "Private locker room",
+      "Exclusive access to VIP events"
+    ],
+    "className": "bg-pink-100"
+  }
+]

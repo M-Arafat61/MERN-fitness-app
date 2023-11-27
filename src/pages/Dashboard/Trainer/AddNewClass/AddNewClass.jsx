@@ -14,12 +14,14 @@ const AddNewClass = () => {
     const description = form.description.value;
     const location = form.location.value;
     const difficulty = form.difficulty.value;
+    const selectedPackage = form.package.value;
     const classData = {
       title,
       instructor,
       description,
       location,
       difficulty,
+      selectedPackage,
     };
     const postClassData = async () => {
       const res = await axiosSecure.post("/classes", classData);
@@ -28,6 +30,7 @@ const AddNewClass = () => {
       toast.success("Class added successfully!");
     };
     postClassData();
+    console.log(classData);
   };
   return (
     <div className='hero mt-10'>
@@ -73,7 +76,7 @@ const AddNewClass = () => {
                 className='input input-bordered'
               />
             </div>
-            <div className='flex justify-between gap-5'>
+            <div className='flex justify-between gap-5 items-end'>
               <div className='form-control w-full'>
                 <label className='label'>
                   <span className='label-text'>location</span>
@@ -97,6 +100,19 @@ const AddNewClass = () => {
                   className='input input-bordered'
                   required
                 />
+              </div>
+              <div className='form-control w-full'>
+                <label className='label'>
+                  <span className='label-text'>Package Name</span>
+                </label>
+                <select
+                  name='package'
+                  className='select  select-bordered w-full max-w-xs'
+                >
+                  <option value='Silver'>Silver</option>
+                  <option value='Gold'>Gold</option>
+                  <option value='Diamond'>Diamond</option>
+                </select>
               </div>
             </div>
 

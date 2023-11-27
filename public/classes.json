@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Boxing",
+    "instructor": "John Doe",
+    "description": "High-energy boxing workout incorporating punching, footwork, and cardio exercises.",
+    "location": "SyncFit Hub,123 Fitness Street, Cityville, State, Country",
+    "difficulty": "Intermediate"
+  },
+  {
+    "title": "Yoga",
+    "instructor": "Alice Smith",
+    "description": "Mindful yoga practice focused on breathing, stretching, and relaxation techniques.",
+    "location": "Yoga Center, 456 Calmness Lane, Townsville, State, Country",
+    "difficulty": "Beginner"
+  },
+  {
+    "title": "CrossFit",
+    "instructor": "Mike Johnson",
+    "description": "Intensive CrossFit session combining strength training, conditioning, and varied exercises.",
+    "location": "CrossFit Arena, 789 Intensity Avenue, Villageton, State, Country",
+    "difficulty": "Advanced"
+  }
+]
