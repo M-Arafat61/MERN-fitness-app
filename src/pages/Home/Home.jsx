@@ -5,6 +5,7 @@ import Features from "../../components/Home/FeaturedSection/Features";
 import LatesArticles from "../../components/Home/LatestArticles/LatesArticles";
 import Reviews from "../../components/Home/Reviews/Reviews";
 import SubscribeUser from "../../components/Home/SubscribeUser/SubscribeUser";
+import Team from "../../components/Home/TeamSection/Team";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <Reviews />
       <LatesArticles />
       <SubscribeUser />
+      <Team />
     </>
   );
 };

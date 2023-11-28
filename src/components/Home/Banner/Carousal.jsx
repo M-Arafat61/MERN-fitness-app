@@ -8,8 +8,7 @@ import "swiper/css/navigation";
 import slide1 from "../../../assets/Images/Banner/man-training-gym.jpg";
 import slide2 from "../../../assets/Images/Banner/girl-stats2.jpg";
 import slide3 from "../../../assets/Images/Banner/group-workout.jpg";
-import slide4 from "../../../assets/Images/Banner/girl-stats.jpg";
-import slide5 from "../../../assets/Images/Banner/young-woman-spinning-class.jpg";
+import slide4 from "../../../assets/Images/Banner/young-woman-spinning-class.jpg";
 import Container from "../../Shared/Container/Container";
 import CarousalContent from "./CarousalContent";
 import CarousalSpinner from "./CarousalSpinner";
@@ -92,22 +91,6 @@ const Carousal = () => {
           <img
             className='md:h-[600px] w-full rounded-lg overflow-hidden object-cover'
             src={slide4}
-            alt=''
-          />
-          <CarousalSpinner />
-          <CarousalContent
-            title={"Your Fitness Companion!"}
-            description={"Discover SyncFit, your ultimate fitness companion. "}
-            moreDescription={
-              "Sync up with friends, challenge each other, and celebrate victories together. Fuel your motivation and crush fitness barriers."
-            }
-          ></CarousalContent>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <img
-            className='md:h-[600px] w-full rounded-lg overflow-hidden object-cover'
-            src={slide5}
             alt=''
           />
           <CarousalSpinner />
