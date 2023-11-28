@@ -1,6 +1,6 @@
 const FeaturesCard = ({ cardImage, cardTitle, cardDesc }) => {
   return (
-    <div className=' bg-white border border-extended-teal rounded-lg shadow flex flex-col justify-between'>
+    <div className=' bg-white rounded-lg shadow flex flex-col justify-between'>
       <img
         className='rounded-t-lg overflow-hidden h-[240px] object-cover w-full'
         src={cardImage}
