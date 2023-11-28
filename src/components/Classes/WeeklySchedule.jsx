@@ -22,11 +22,16 @@ const WeeklySchedule = ({ classes }) => {
     return (
       <div>
         {filteredClasses.map((cls, idx) => (
-          <div className='flex gap-5' key={cls._id}>
+          <div
+            className='flex flex-col gap-2 border px-5 py-2 mb-5 rounded-xl overflow-hidden'
+            key={cls._id}
+          >
             <p>{idx + 1}.</p>
-            <h3>{cls.title}</h3>
-            <h3>{cls.difficulty}</h3>
-            <p>Instructor: {cls.instructor}</p>
+            <h3 className='text-xl font-medium'>{cls.title}</h3>
+            <h3 className='text-extended-teal font-medium uppercase text-base tracking-tight'>
+              {cls.difficulty}
+            </h3>
+            <p className='italic text-ex'>Instructor: {cls.instructor}</p>
           </div>
         ))}
       </div>
@@ -34,31 +39,38 @@ const WeeklySchedule = ({ classes }) => {
   };
 
   return (
-    <div className='p-4 mt-10 flex items-center justify-center'>
-      <Tabs
-        selectedIndex={selectedTab}
-        onSelect={index => setSelectedTab(index)}
-      >
-        <TabList className='flex mb-5 border-0 text-xl font-semibold'>
-          <div className='flex gap-2 md:gap-5'>
+    <>
+      <div className='text-3xl font-bold text-center mt-10 '>
+        Weekly Schedule
+      </div>
+      <div className='p-4 flex items-center justify-center mt-5'>
+        <Tabs
+          selectedIndex={selectedTab}
+          onSelect={index => setSelectedTab(index)}
+        >
+          <TabList className='flex mb-5 border-0 text-xl font-semibold'>
+            <div className='flex gap-2 md:gap-5'>
+              {daysOfWeek.map((day, index) => (
+                <Tab
+                  key={day}
+                  className={`cursor-pointer px-2 ${
+                    selectedTab === index ? "border-b-2 border-black" : ""
+                  }`}
+                >
+                  {day}
+                </Tab>
+              ))}
+            </div>
+          </TabList>
+
+          <div className='text-xl'>
             {daysOfWeek.map((day, index) => (
-              <Tab
-                key={day}
-                className={`cursor-pointer px-2 ${
-                  selectedTab === index ? "border-b-2 border-black" : ""
-                }`}
-              >
-                {day}
-              </Tab>
+              <TabPanel key={index}>{handleDayClick(day)}</TabPanel>
             ))}
           </div>
-        </TabList>
-
-        {daysOfWeek.map((day, index) => (
-          <TabPanel key={index}>{handleDayClick(day)}</TabPanel>
-        ))}
-      </Tabs>
-    </div>
+        </Tabs>
+      </div>
+    </>
   );
 };
 

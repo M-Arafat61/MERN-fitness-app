@@ -28,11 +28,7 @@ const Classes = () => {
 
   return (
     <Container>
-      <div className='text-3xl font-bold'>Weekly Schedule</div>
-
-      <div className=''>
-        <WeeklySchedule classes={classes} />
-      </div>
+      <WeeklySchedule classes={classes} />
 
       <div className='text-3xl font-bold mt-16'>Classes With Best Trainers</div>
       <div className='grid grid-cols-3 gap-5 mt-10'>

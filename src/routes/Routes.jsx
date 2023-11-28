@@ -15,6 +15,7 @@ import BookingSlot from "../pages/BookingSlot/BookingSlot";
 import AddNewClass from "../pages/Dashboard/Trainer/AddNewClass/AddNewClass";
 import AddNewForumPost from "../pages/Dashboard/Shared/AddNewForumPost";
 import Classes from "../pages/Classes/Classes";
+import ClassDetails from "../pages/ClassDetails/ClassDetails";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,11 @@ const router = createBrowserRouter([
       {
         path: "classes",
         element: <Classes />,
+      },
+      {
+        path: "/class-details/:id",
+        element: <ClassDetails />,
+        loader: ({ params }) => axiosPublic.get(`/class-details/${params.id}`),
       },
       {
         path: "booking-slot/:id/:day/:index",
