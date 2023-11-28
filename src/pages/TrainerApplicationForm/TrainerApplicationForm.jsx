@@ -8,6 +8,8 @@ import { useNavigate } from "react-router-dom";
 const TrainerApplicationForm = () => {
   const { user } = useAuth();
 
+  console.log(user);
+
   const [skills, setSkills] = useState([]);
   const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
@@ -66,7 +68,6 @@ const TrainerApplicationForm = () => {
     const linkedin = form.linkedin.value;
     const instagram = form.instagram.value;
     const availableSlots = form.slot.value;
-
     const timeSlotOfDays = Object.entries(timeSlots)
       // eslint-disable-next-line no-unused-vars
       .filter(([_, slots]) => slots.length > 0)
@@ -87,13 +88,14 @@ const TrainerApplicationForm = () => {
       availableSlots,
       timeSlotOfDays,
       skills,
+      role: "member",
       social: {
         twitter: twitter,
         linkedin: linkedin,
         instagram: instagram,
       },
     };
-    // console.log(trainerInfo);
+    console.log(trainerInfo);
     axiosSecure
       .post("/trainer-applications", trainerInfo)
       .then(res => {

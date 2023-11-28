@@ -32,7 +32,7 @@ const AdminDashboardLists = () => {
         <li className='flex items-center gap-2 hover:font-bold '>
           <Icon className='text-2xl' icon='uiw:menu' />
           <NavLink
-            to='/dashboard/applied-trainers'
+            to='/dashboard/trainer-applications'
             className={({ isActive, isPending }) =>
               isPending ? "pending" : isActive ? "underline font-bold" : ""
             }

@@ -16,6 +16,8 @@ import AddNewClass from "../pages/Dashboard/Trainer/AddNewClass/AddNewClass";
 import AddNewForumPost from "../pages/Dashboard/Shared/AddNewForumPost";
 import Classes from "../pages/Classes/Classes";
 import ClassDetails from "../pages/ClassDetails/ClassDetails";
+import AppliedTrainer from "../pages/Dashboard/Admin/AppliedTrainer/AppliedTrainer";
+import AllTrainers from "../pages/Dashboard/Admin/AllTrainers/AllTrainers";
 
 const router = createBrowserRouter([
   {
@@ -79,6 +81,14 @@ const router = createBrowserRouter([
       {
         path: "subscribers",
         element: <AllSubscribers />,
+      },
+      {
+        path: "trainer-applications",
+        element: <AppliedTrainer />,
+      },
+      {
+        path: "trainers",
+        element: <AllTrainers />,
       },
       // trainer routes
       {
