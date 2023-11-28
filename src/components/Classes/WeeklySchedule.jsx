@@ -1,4 +1,9 @@
-const WeeklySchedule = ({ bookings }) => {
+import { useState } from "react";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+
+const WeeklySchedule = ({ classes }) => {
+  const [selectedTab, setSelectedTab] = useState(0);
   const daysOfWeek = [
     "Sunday",
     "Monday",
@@ -9,39 +14,50 @@ const WeeklySchedule = ({ bookings }) => {
     "Saturday",
   ];
 
-  return (
-    <div className='p-4 mt-10'>
-      <div className='grid grid-cols-7 gap-4'>
-        {daysOfWeek.map(day => {
-          const matchedBookings = bookings.filter(
-            booking =>
-              booking.classTime &&
-              booking.classTime.day &&
-              booking.classTime.day.toLowerCase() === day.toLowerCase()
-          );
+  const handleDayClick = selectedDay => {
+    const filteredClasses = classes.filter(cls =>
+      cls.daysArray.includes(selectedDay)
+    );
 
-          return (
-            <div key={day} className='border border-t-0 rounded text-center '>
-              <h3 className='text-lg font-semibold mb-2 bg-extended-teal text-white rounded-t-lg overflow-hidden p-4'>
-                {day}
-              </h3>
-              <hr className='my-5' />
-              <p className='font-semibold'>Class Time</p>
-              <hr className='my-2 w-1/2 mx-auto' />
-              {matchedBookings.length > 0 ? (
-                matchedBookings.map((booking, index) => (
-                  <div
-                    key={index}
-                    className='text-sm text-blue-600'
-                  >{`${booking.classTime.classTime.start} - ${booking.classTime.classTime.end}`}</div>
-                ))
-              ) : (
-                <p className='text-sm text-yellow-500'>No class scheduled</p>
-              )}
-            </div>
-          );
-        })}
+    return (
+      <div>
+        {filteredClasses.map((cls, idx) => (
+          <div className='flex gap-5' key={cls._id}>
+            <p>{idx + 1}.</p>
+            <h3>{cls.title}</h3>
+            <h3>{cls.difficulty}</h3>
+            <p>Instructor: {cls.instructor}</p>
+          </div>
+        ))}
       </div>
+    );
+  };
+
+  return (
+    <div className='p-4 mt-10 flex items-center justify-center'>
+      <Tabs
+        selectedIndex={selectedTab}
+        onSelect={index => setSelectedTab(index)}
+      >
+        <TabList className='flex mb-5 border-0 text-xl font-semibold'>
+          <div className='flex gap-2 md:gap-5'>
+            {daysOfWeek.map((day, index) => (
+              <Tab
+                key={day}
+                className={`cursor-pointer px-2 ${
+                  selectedTab === index ? "border-b-2 border-black" : ""
+                }`}
+              >
+                {day}
+              </Tab>
+            ))}
+          </div>
+        </TabList>
+
+        {daysOfWeek.map((day, index) => (
+          <TabPanel key={index}>{handleDayClick(day)}</TabPanel>
+        ))}
+      </Tabs>
     </div>
   );
 };

@@ -1,23 +1,112 @@
 [
   {
-    "title": "Boxing",
+    "title": "High-Intensity Interval Training (HIIT)",
+    "instructor": "Chris Evans",
+    "description": "High-Intensity Interval Training (HIIT) is a fitness technique that involves short bursts of intense exercise alternated with brief recovery periods. It's an effective way to burn calories and build endurance quickly. HIIT sessions may include exercises like sprinting, jumping jacks, and bodyweight exercises. These workouts push your body to its limits and are suitable for individuals seeking a challenging fitness routine.",
+    "location": "Fitness Center A",
+    "difficulty": "Advanced",
+    "selectedPackage": "Diamond",
+    "capacity": 18,
+    "equipment": ["Battle ropes", "Dumbbells", "Medicine balls"],
+    "schedule": ["Monday", "Wednesday", "Saturday"]
+  },
+  {
+    "title": "Dynamic Indoor Cycling (Spinning)",
+    "instructor": "David Brown",
+    "description": "Dynamic Indoor Cycling, commonly known as Spinning, is an indoor exercise using stationary bikes. It's a high-energy workout that focuses on endurance and interval training. Spinning classes simulate outdoor cycling experiences with varying speeds and resistance levels. These sessions are great for improving cardiovascular health, burning calories, and strengthening leg muscles. Suitable for all fitness levels, Spinning offers a challenging yet rewarding workout.",
+    "location": "Cycling Studio G",
+    "difficulty": "Intermediate",
+    "selectedPackage": "Silver",
+    "capacity": 20,
+    "equipment": ["Stationary bikes"],
+    "schedule": ["Wednesday", "Friday", "Sunday"]
+  },
+  {
+    "title": "Intensive CrossFit",
     "instructor": "John Doe",
-    "description": "High-energy boxing workout incorporating punching, footwork, and cardio exercises.",
-    "location": "SyncFit Hub,123 Fitness Street, Cityville, State, Country",
-    "difficulty": "Intermediate"
+    "description": "Intensive CrossFit sessions blend strength training, conditioning, and various exercises. It's a rigorous workout that challenges participants both mentally and physically. CrossFit is known for its diverse and high-intensity workouts that improve overall fitness, agility, and strength. It's an ideal choice for individuals seeking a comprehensive and demanding fitness regimen.",
+    "location": "Fitness Center A",
+    "difficulty": "Advanced",
+    "selectedPackage": "Gold",
+    "capacity": 20,
+    "equipment": ["Barbells", "Kettlebells", "Pull-up bars"],
+    "schedule": ["Monday", "Wednesday", "Friday"]
   },
   {
-    "title": "Yoga",
-    "instructor": "Alice Smith",
-    "description": "Mindful yoga practice focused on breathing, stretching, and relaxation techniques.",
-    "location": "Yoga Center, 456 Calmness Lane, Townsville, State, Country",
-    "difficulty": "Beginner"
+    "title": "Mindful Yoga Practice",
+    "instructor": "Jane Smith",
+    "description": "Mindful Yoga Practice focuses on flexibility, relaxation, and breathing techniques. It's a gentle yet effective way to reduce stress, improve flexibility, and enhance overall well-being. Yoga helps in building strength and balance while encouraging mindfulness and inner peace. Suitable for beginners and experienced practitioners, this practice offers a holistic approach to fitness and mental health.",
+    "location": "Yoga Studio B",
+    "difficulty": "Beginner",
+    "selectedPackage": "Diamond",
+    "capacity": 15,
+    "equipment": ["Yoga mats", "Blocks", "Straps"],
+    "schedule": ["Tuesday", "Thursday", "Saturday"]
   },
   {
-    "title": "CrossFit",
-    "instructor": "Mike Johnson",
-    "description": "Intensive CrossFit session combining strength training, conditioning, and varied exercises.",
-    "location": "CrossFit Arena, 789 Intensity Avenue, Villageton, State, Country",
-    "difficulty": "Advanced"
+    "title": "Zumba Fitness",
+    "instructor": "Maria Rodriguez",
+    "description": "Zumba Fitness is a fun and energetic dance fitness class inspired by Latin music and dance moves. It's a full-body workout that combines cardio, muscle conditioning, and a great time! Zumba helps in improving cardiovascular health, coordination, and mood while burning calories. It's suitable for all fitness levels and provides an enjoyable and effective way to stay active.",
+    "location": "Dance Studio C",
+    "difficulty": "Intermediate",
+    "selectedPackage": "Gold",
+    "capacity": 25,
+    "equipment": ["Dance floor"],
+    "schedule": ["Monday", "Wednesday", "Friday"]
+  },
+  {
+    "title": "Boxing Fitness",
+    "instructor": "Mike Tyson",
+    "description": "Boxing Fitness involves high-intensity workouts that focus on technique, strength, and endurance. It's a challenging yet rewarding fitness class that incorporates boxing drills and conditioning exercises. This workout helps in enhancing cardiovascular fitness, agility, and core strength. Suitable for those seeking a dynamic and intense workout experience.",
+    "location": "Boxing Gym D",
+    "difficulty": "Advanced",
+    "selectedPackage": "Diamond",
+    "capacity": 18,
+    "equipment": ["Boxing gloves", "Punching bags", "Speed bags"],
+    "schedule": ["Tuesday"]
+  },
+  {
+    "title": "Pilates Workout",
+    "instructor": "Emily Watson",
+    "description": "Pilates Workout focuses on low-impact exercises that strengthen and tone the body. It emphasizes core strength, flexibility, and proper alignment. Pilates helps in improving posture, muscle tone, and overall body awareness. It's suitable for individuals looking for a balanced and gentle yet effective workout.",
+    "location": "Fitness Studio E",
+    "difficulty": "Intermediate",
+    "selectedPackage": "Silver",
+    "capacity": 12,
+    "equipment": ["Pilates reformer", "Yoga ball"],
+    "schedule": ["Monday", "Wednesday", "Friday"]
+  },
+  {
+    "title": "Full-Body Bootcamp",
+    "instructor": "Sarah Johnson",
+    "description": "Full-Body Bootcamp is an outdoor workout that combines cardio, strength, and agility exercises. It's an intense and challenging fitness class designed to push your limits. Bootcamp sessions involve various drills and movements that target different muscle groups. This class is perfect for those looking for a diverse and challenging workout.",
+    "location": "Outdoor Park F",
+    "difficulty": "Advanced",
+    "selectedPackage": "Gold",
+    "capacity": 30,
+    "equipment": ["Cones", "Resistance bands"],
+    "schedule": ["Tuesday", "Thursday", "Saturday"]
+  },
+  {
+    "title": "Functional Movement Training",
+    "instructor": "Alexandra Green",
+    "description": "Functional Movement Training involves exercises that mimic everyday movements to improve strength, flexibility, and mobility. It focuses on enhancing overall functional fitness and movement patterns. This type of training helps in preventing injuries and improving daily performance. Suitable for individuals of all fitness levels looking to improve their functional abilities.",
+    "location": "Fitness Studio B",
+    "difficulty": "Intermediate",
+    "selectedPackage": "Gold",
+    "capacity": 16,
+    "equipment": ["TRX", "Resistance bands"],
+    "schedule": ["Tuesday", "Thursday", "Saturday"]
+  },
+  {
+    "title": "Barre Fitness",
+    "instructor": "Olivia White",
+    "description": "Barre Fitness is a low-impact workout that combines elements of ballet, Pilates, and strength training. It involves precise movements and exercises that target specific muscle groups, emphasizing core strength and stability. Barre workouts help in improving posture, flexibility, and muscle tone. Suitable for individuals seeking a graceful yet challenging workout experience.",
+    "location": "Barre Studio C",
+    "difficulty": "Intermediate",
+    "selectedPackage": "Silver",
+    "capacity": 15,
+    "equipment": ["Barre", "Light hand weights"],
+    "schedule": ["Wednesday", "Friday", "Sunday"]
   }
 ]

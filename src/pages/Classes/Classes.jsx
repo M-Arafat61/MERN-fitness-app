@@ -6,29 +6,34 @@ import WeeklySchedule from "../../components/Classes/WeeklySchedule";
 import ClassesCard from "../../components/Classes/ClassesCard";
 
 const Classes = () => {
-  const [bookings, setBookings] = useState([]);
+  // const [bookings, setBookings] = useState([]);
   const [classes, setClasses] = useState([]);
+  // const [trainers, setTrainers] = useState([]);
   const { user } = useAuth();
 
   useEffect(() => {
-    const fetchBookings = async () => {
-      const res = await axiosPublic.get(`/trainer-bookings/${user?.email}`);
-      setBookings(res.data);
-    };
+    // const fetchTrainers = async () => {
+    //   const res = await axiosPublic.get(`/trainers`);
+    //   setTrainers(res.data);
+    // };
 
     const fetchClasses = async () => {
       const res = await axiosPublic.get(`/classes`);
       setClasses(res.data);
     };
-    fetchBookings();
+
     fetchClasses();
   }, [user?.email]);
-  // console.log(classes);
+  // console.log(trainers);
 
   return (
     <Container>
       <div className='text-3xl font-bold'>Weekly Schedule</div>
-      <WeeklySchedule bookings={bookings} />
+
+      <div className=''>
+        <WeeklySchedule classes={classes} />
+      </div>
+
       <div className='text-3xl font-bold mt-16'>Classes With Best Trainers</div>
       <div className='grid grid-cols-3 gap-5 mt-10'>
         {classes.map(eachClass => (

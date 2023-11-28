@@ -1,10 +1,19 @@
 import toast from "react-hot-toast";
 import useAuth from "../../../../hooks/useAuth";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
+import { useState } from "react";
 
 const AddNewClass = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
+  const [classData, setClassData] = useState({
+    equipments: "",
+    days: "",
+  });
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setClassData({ ...classData, [name]: value });
+  };
 
   const handleAddClass = e => {
     e.preventDefault();
@@ -12,27 +21,37 @@ const AddNewClass = () => {
     const title = form.title.value;
     const instructor = form.instructor.value;
     const email = form.email.value;
+    const photo = form.photo.value;
     const description = form.description.value;
     const location = form.location.value;
+    const capacity = form.capacity.value;
     const difficulty = form.difficulty.value;
     const selectedPackage = form.package.value;
-    const classData = {
+    const equipmentArray = classData.equipments
+      .split(",")
+      .map(equipment => equipment.trim());
+    const daysArray = classData.days.split(",").map(day => day.trim());
+    const classInfo = {
       title,
       instructor,
       email,
+      photo,
       description,
       location,
       difficulty,
+      capacity,
       selectedPackage,
+      equipmentArray,
+      daysArray,
     };
     const postClassData = async () => {
-      const res = await axiosSecure.post("/classes", classData);
+      const res = await axiosSecure.post("/classes", classInfo);
       console.log(res.data);
       form.reset();
       toast.success("Class added successfully!");
     };
     postClassData();
-    console.log(classData);
+    console.log(classInfo);
   };
   return (
     <div className='hero mt-10'>
@@ -82,6 +101,17 @@ const AddNewClass = () => {
             </div>
             <div className='form-control'>
               <label className='label'>
+                <span className='label-text'>Class Photo URL</span>
+              </label>
+              <input
+                type='text'
+                placeholder='Photo URL'
+                name='photo'
+                className='input input-bordered'
+              />
+            </div>
+            <div className='form-control'>
+              <label className='label'>
                 <span className='label-text'>Class Details</span>
               </label>
               <input
@@ -89,6 +119,18 @@ const AddNewClass = () => {
                 placeholder='Class Info'
                 name='description'
                 className='input input-bordered'
+              />
+            </div>
+            <div className='form-control w-full'>
+              <label className='label'>
+                <span className='label-text'>Total Capacity</span>
+              </label>
+              <input
+                type='number'
+                placeholder='Capacity'
+                name='capacity'
+                className='input input-bordered'
+                required
               />
             </div>
             <div className='flex justify-between gap-5 items-end'>
@@ -120,14 +162,43 @@ const AddNewClass = () => {
                 <label className='label'>
                   <span className='label-text'>Package Name</span>
                 </label>
-                <select
-                  name='package'
-                  className='select  select-bordered w-full max-w-xs'
-                >
+                <select name='package' className='select  select-bordered '>
                   <option value='Silver'>Silver</option>
                   <option value='Gold'>Gold</option>
                   <option value='Diamond'>Diamond</option>
                 </select>
+              </div>
+            </div>
+            <div className='flex justify-between items-center'>
+              <div>
+                <label className='label'>
+                  <span className='label-text'>
+                    Equipments (Comma-Separated)
+                  </span>
+                </label>
+                <input
+                  type='text'
+                  name='equipments'
+                  value={classData.equipments}
+                  onChange={handleChange}
+                  placeholder='Equipments'
+                  className='input input-bordered'
+                  required
+                />
+              </div>
+              <div>
+                <label className='label'>
+                  <span className='label-text'>Days (Comma-Separated)</span>
+                </label>
+                <input
+                  type='text'
+                  name='days'
+                  value={classData.days}
+                  onChange={handleChange}
+                  placeholder='Days in a week'
+                  className='input input-bordered'
+                  required
+                />
               </div>
             </div>
 
