@@ -155,7 +155,7 @@
   {
     "name": "Emma Davis",
     "email": "e@d.com",
-    "profileImage": "https://i.ibb.co/b5StYLR/pexels-alasdair-braxton-4804447.jpg",
+    "profileImage": "https://i.ibb.co/hWyb2hk/pexels-andres-ayrton-6551174-1.jpg",
     "age": "29",
     "experience": "5",
     "availableDays": ["monday", "wednesday", "thursday", "friday", "saturday"],
@@ -208,6 +208,64 @@
       "twitter": "https://twitter.com/emmadavis_fit",
       "linkedin": "https://linkedin.com/in/emmadavisfitness",
       "instagram": "https://instagram.com/emmadavisfitness"
+    }
+  },
+  {
+    "name": "Jae Anni",
+    "email": "j@a.com",
+    "profileImage": "https://i.ibb.co/3sn5XWH/pexels-monstera-production-6998744.jpg",
+    "age": "32",
+    "experience": "4",
+    "availableDays": ["monday", "wednesday", "thursday", "saturday", "sunday"],
+    "availableSlots": "5",
+    "timeSlotOfDays": {
+      "monday": [
+        { "start": "08:00", "end": "09:00" },
+        { "start": "10:00", "end": "11:00" },
+        { "start": "18:00", "end": "19:00" },
+        { "start": "20:30", "end": "21:30" },
+        { "start": "22:00", "end": "23:00" }
+      ],
+      "wednesday": [
+        { "start": "07:30", "end": "08:30" },
+        { "start": "09:30", "end": "10:30" },
+        { "start": "16:00", "end": "17:00" },
+        { "start": "19:00", "end": "20:00" },
+        { "start": "21:00", "end": "22:00" }
+      ],
+      "thursday": [
+        { "start": "08:00", "end": "09:00" },
+        { "start": "09:30", "end": "10:30" },
+        { "start": "11:00", "end": "12:00" },
+        { "start": "12:30", "end": "13:30" },
+        { "start": "14:00", "end": "15:00" }
+      ],
+      "saturday": [
+        { "start": "17:00", "end": "18:00" },
+        { "start": "18:30", "end": "19:30" },
+        { "start": "20:00", "end": "21:00" },
+        { "start": "21:30", "end": "22:30" },
+        { "start": "23:00", "end": "00:00" }
+      ],
+      "sunday": [
+        { "start": "07:00", "end": "08:00" },
+        { "start": "09:00", "end": "10:00" },
+        { "start": "11:00", "end": "12:00" },
+        { "start": "13:00", "end": "14:00" },
+        { "start": "15:00", "end": "16:00" }
+      ]
+    },
+    "skills": [
+      "Pilates",
+      "Functional Training",
+      "Yoga",
+      "Cardio Exercises",
+      "Meditation"
+    ],
+    "social": {
+      "twitter": "https://twitter.com/natasham_fit",
+      "linkedin": "https://linkedin.com/in/natashamfitness",
+      "instagram": "https://instagram.com/natashamfitness"
     }
   }
 ]

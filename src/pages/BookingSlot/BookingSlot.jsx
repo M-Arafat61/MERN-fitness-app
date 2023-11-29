@@ -50,9 +50,10 @@ const BookingSlot = () => {
       package: eachPackage,
       classes: filteredClass,
       trainer: trainer.name,
+      userName: user?.displayName,
       userEmail: user?.email,
       trainerEmail: trainer.email,
-      classTime: { classTime, day },
+      bookedSlot: { classTime, day },
     };
 
     try {

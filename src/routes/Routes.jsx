@@ -18,6 +18,7 @@ import Classes from "../pages/Classes/Classes";
 import ClassDetails from "../pages/ClassDetails/ClassDetails";
 import AppliedTrainer from "../pages/Dashboard/Admin/AppliedTrainer/AppliedTrainer";
 import AllTrainers from "../pages/Dashboard/Admin/AllTrainers/AllTrainers";
+import ManageSlots from "../pages/Dashboard/Trainer/ManageSlots/ManageSlots";
 
 const router = createBrowserRouter([
   {
@@ -98,6 +99,10 @@ const router = createBrowserRouter([
       {
         path: "add-forum",
         element: <AddNewForumPost />,
+      },
+      {
+        path: "manage-slots",
+        element: <ManageSlots />,
       },
     ],
   },

@@ -12,28 +12,48 @@ const AllTrainers = () => {
     },
   });
 
-  // important
-  const calculateDaysDifference = acceptanceDate => {
-    const oneDayInMilliseconds = 24 * 60 * 60 * 1000; // One day in milliseconds
+  console.log(trainers);
+  const monthAndDayCalculation = acceptanceDate => {
+    const oneDayInMilliseconds = 24 * 60 * 60 * 1000;
     const acceptanceDateInMillis = new Date(acceptanceDate).getTime();
     const todayInMillis = new Date().getTime();
     const differenceInMilliseconds = todayInMillis - acceptanceDateInMillis;
 
-    const differenceInDays = Math.floor(
-      differenceInMilliseconds / oneDayInMilliseconds
+    const months = Math.floor(
+      differenceInMilliseconds / (oneDayInMilliseconds * 30)
     );
-    return differenceInDays;
+    const remainingDays = Math.floor(
+      (differenceInMilliseconds % (oneDayInMilliseconds * 30)) /
+        oneDayInMilliseconds
+    );
+
+    let result = "";
+
+    if (months > 0) {
+      result += `${months} month${months !== 1 ? "s" : ""}`;
+    }
+
+    if (months > 0 && remainingDays > 0) {
+      result += ` and `;
+    }
+
+    if (remainingDays > 0) {
+      result += `${remainingDays} day${remainingDays !== 1 ? "s" : ""}`;
+    }
+
+    return result || "Today";
   };
 
   return (
     <div className='mt-10'>
-      <table className='table '>
-        <thead className=' '>
+      <table className='table'>
+        <thead className='text-black '>
           <tr className='text-lg'>
             <th></th>
             <th>Trainer Name</th>
             <th>Trainer Email</th>
-            <th>Pay</th>
+            <th>Joined for</th>
+            <th>Salary Status</th>
           </tr>
         </thead>
 
@@ -43,15 +63,20 @@ const AllTrainers = () => {
               <td>{index + 1}.</td>
               <td>{trainer.name}</td>
               <td>{trainer.email}</td>
-              <td>{calculateDaysDifference(trainer.acceptanceDate)}</td>
+              <td>{monthAndDayCalculation(trainer.acceptanceDate)}</td>
+              <td className='text-yellow-500'>{trainer.payment}</td>
               <td>
-                <button className='flex items-center gap-2 bg-extended-teal px-2 py-1 rounded-md text-white font-bold uppercase hover:bg-gradient-to-t from-extended-teal to-fuchsia-500'>
-                  <Icon
-                    className='text-2xl'
-                    icon='streamline:payment-10-solid'
-                  ></Icon>
-                  Pay
-                </button>
+                {trainer.payment === "pending" ? (
+                  <button className='flex items-center gap-2 bg-extended-teal px-2 py-1 rounded-md text-white font-bold uppercase hover:bg-gradient-to-t from-extended-teal to-fuchsia-500'>
+                    <Icon
+                      className='text-2xl'
+                      icon='streamline:payment-10-solid'
+                    ></Icon>
+                    Pay
+                  </button>
+                ) : (
+                  ""
+                )}
               </td>
             </tr>
           </tbody>

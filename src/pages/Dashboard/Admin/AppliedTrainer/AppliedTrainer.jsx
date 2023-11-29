@@ -45,7 +45,7 @@ const AppliedTrainer = () => {
       .patch(`trainer-applications/admin/${application._id}`)
       .then(res => {
         console.log(res.data);
-        if (res.data.true === true) {
+        if (res.data.success === true) {
           refetch();
           toast.success(`${selectedApplication.name} is Trainer Now!`);
         }
