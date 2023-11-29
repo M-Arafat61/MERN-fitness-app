@@ -1,10 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import { Icon } from "@iconify/react";
+import { Link } from "react-router-dom";
 
 const AllTrainers = () => {
   const axiosSecure = useAxiosSecure();
-  const { data: trainers = [], refetch } = useQuery({
+  const { data: trainers = [] } = useQuery({
     queryKey: ["trainers"],
     queryFn: async () => {
       const res = await axiosSecure.get("/trainers");
@@ -12,7 +13,7 @@ const AllTrainers = () => {
     },
   });
 
-  console.log(trainers);
+  // console.log(trainers);
   const monthAndDayCalculation = acceptanceDate => {
     const oneDayInMilliseconds = 24 * 60 * 60 * 1000;
     const acceptanceDateInMillis = new Date(acceptanceDate).getTime();
@@ -54,6 +55,7 @@ const AllTrainers = () => {
             <th>Trainer Email</th>
             <th>Joined for</th>
             <th>Salary Status</th>
+            <th></th>
           </tr>
         </thead>
 
@@ -64,16 +66,29 @@ const AllTrainers = () => {
               <td>{trainer.name}</td>
               <td>{trainer.email}</td>
               <td>{monthAndDayCalculation(trainer.acceptanceDate)}</td>
-              <td className='text-yellow-500'>{trainer.payment}</td>
+              <td
+                className={`${
+                  trainer.payment === "pending"
+                    ? "text-yellow-600 font-semibold"
+                    : "text-green-500 font-semibold"
+                }`}
+              >
+                {trainer.payment}
+              </td>
               <td>
-                {trainer.payment === "pending" ? (
-                  <button className='flex items-center gap-2 bg-extended-teal px-2 py-1 rounded-md text-white font-bold uppercase hover:bg-gradient-to-t from-extended-teal to-fuchsia-500'>
-                    <Icon
-                      className='text-2xl'
-                      icon='streamline:payment-10-solid'
-                    ></Icon>
-                    Pay
-                  </button>
+                {trainer.payment === "pending" &&
+                monthAndDayCalculation(trainer.acceptanceDate).includes(
+                  "month"
+                ) ? (
+                  <Link to={`/dashboard/trainer-payment/${trainer._id}`}>
+                    <button className='flex items-center gap-2 bg-extended-teal px-2 py-1 rounded-md text-white font-bold uppercase hover:bg-gradient-to-t from-extended-teal to-fuchsia-500'>
+                      <Icon
+                        className='text-2xl'
+                        icon='streamline:payment-10-solid'
+                      ></Icon>
+                      Pay
+                    </button>
+                  </Link>
                 ) : (
                   ""
                 )}

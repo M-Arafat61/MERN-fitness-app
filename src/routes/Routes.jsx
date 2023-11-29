@@ -22,6 +22,7 @@ import ManageSlots from "../pages/Dashboard/Trainer/ManageSlots/ManageSlots";
 import ActivityLog from "../pages/Dashboard/Member/ActivityLog/ActivityLog";
 import RecommendedClasses from "../pages/Dashboard/Member/RecommendedClasses/RecommendedClasses";
 import ProfileSettings from "../pages/Dashboard/Member/ProfileSettings/ProfileSettings";
+import Payment from "../components/Dashboard/Admin/TrainerPayment/Payment";
 
 const router = createBrowserRouter([
   {
@@ -93,6 +94,11 @@ const router = createBrowserRouter([
       {
         path: "trainers",
         element: <AllTrainers />,
+      },
+      {
+        path: "trainer-payment/:id",
+        element: <Payment />,
+        loader: ({ params }) => axiosPublic.get(`trainer-details/${params.id}`),
       },
       // trainer routes
       {
