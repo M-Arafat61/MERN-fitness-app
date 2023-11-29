@@ -5,7 +5,7 @@ import TrainerDashboardLists from "./TrainerDashboardLists";
 const Sidebar = () => {
   return (
     <div>
-      <AdminDashboardLists />
+      {/* <AdminDashboardLists />
       <hr />
       <br />
       <br />
@@ -18,7 +18,7 @@ const Sidebar = () => {
       <br />
       <br />
 
-      <hr />
+      <hr /> */}
 
       <MemberDashboardLists />
     </div>

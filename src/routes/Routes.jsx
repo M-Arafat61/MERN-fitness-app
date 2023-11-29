@@ -21,6 +21,7 @@ import AllTrainers from "../pages/Dashboard/Admin/AllTrainers/AllTrainers";
 import ManageSlots from "../pages/Dashboard/Trainer/ManageSlots/ManageSlots";
 import ActivityLog from "../pages/Dashboard/Member/ActivityLog/ActivityLog";
 import RecommendedClasses from "../pages/Dashboard/Member/RecommendedClasses/RecommendedClasses";
+import ProfileSettings from "../pages/Dashboard/Member/ProfileSettings/ProfileSettings";
 
 const router = createBrowserRouter([
   {
@@ -114,6 +115,10 @@ const router = createBrowserRouter([
       {
         path: "recommended-classes",
         element: <RecommendedClasses />,
+      },
+      {
+        path: "settings",
+        element: <ProfileSettings />,
       },
     ],
   },
