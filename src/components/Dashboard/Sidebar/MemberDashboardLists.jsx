@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import Container from "../../Shared/Container/Container";
 import { Icon } from "@iconify/react";
 
-const MemberDahboardLists = () => {
+const MemberDashboardLists = () => {
   return (
     <Container>
       <div className='space-y-8'>
@@ -17,7 +17,7 @@ const MemberDahboardLists = () => {
             <li className='flex items-center gap-2 hover:font-bold'>
               <Icon className='text-2xl' icon='iconamoon:home-bold' />
               <NavLink
-                to='/activity'
+                to='/dashboard/activity'
                 className={({ isActive, isPending }) =>
                   isPending ? "pending" : isActive ? "underline font-bold" : ""
                 }
@@ -28,7 +28,7 @@ const MemberDahboardLists = () => {
             <li className='flex items-center gap-2 hover:font-bold'>
               <Icon className='text-2xl' icon='mingcute:menu-line' />
               <NavLink
-                to='/recommended-classes'
+                to='/dashboard/recommended-classes'
                 className={({ isActive, isPending }) =>
                   isPending ? "pending" : isActive ? "underline font-bold" : ""
                 }
@@ -55,4 +55,4 @@ const MemberDahboardLists = () => {
   );
 };
 
-export default MemberDahboardLists;
+export default MemberDashboardLists;

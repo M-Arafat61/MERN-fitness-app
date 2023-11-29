@@ -19,6 +19,7 @@ import ClassDetails from "../pages/ClassDetails/ClassDetails";
 import AppliedTrainer from "../pages/Dashboard/Admin/AppliedTrainer/AppliedTrainer";
 import AllTrainers from "../pages/Dashboard/Admin/AllTrainers/AllTrainers";
 import ManageSlots from "../pages/Dashboard/Trainer/ManageSlots/ManageSlots";
+import ActivityLog from "../pages/Dashboard/Member/ActivityLog/ActivityLog";
 
 const router = createBrowserRouter([
   {
@@ -103,6 +104,11 @@ const router = createBrowserRouter([
       {
         path: "manage-slots",
         element: <ManageSlots />,
+      },
+      // member routes
+      {
+        path: "activity",
+        element: <ActivityLog />,
       },
     ],
   },

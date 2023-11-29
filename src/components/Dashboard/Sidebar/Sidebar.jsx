@@ -1,4 +1,5 @@
 import AdminDashboardLists from "./AdminDashboardLists";
+import MemberDashboardLists from "./MemberDashboardLists";
 import TrainerDashboardLists from "./TrainerDashboardLists";
 
 const Sidebar = () => {
@@ -12,6 +13,14 @@ const Sidebar = () => {
       <hr />
 
       <TrainerDashboardLists />
+
+      <hr />
+      <br />
+      <br />
+
+      <hr />
+
+      <MemberDashboardLists />
     </div>
   );
 };

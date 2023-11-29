@@ -13,7 +13,9 @@ const ManageSlots = () => {
     queryKey: ["slotBookings"],
     enabled: !!user?.email,
     queryFn: async () => {
-      const response = await axiosSecure.get(`/trainer-bookings/${user.email}`);
+      const response = await axiosSecure.get(
+        `/trainer-bookings/trainer/${user.email}`
+      );
 
       return response.data;
     },
