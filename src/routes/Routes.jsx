@@ -23,6 +23,8 @@ import ActivityLog from "../pages/Dashboard/Member/ActivityLog/ActivityLog";
 import RecommendedClasses from "../pages/Dashboard/Member/RecommendedClasses/RecommendedClasses";
 import ProfileSettings from "../pages/Dashboard/Member/ProfileSettings/ProfileSettings";
 import Payment from "../components/Dashboard/Admin/TrainerPayment/Payment";
+import Balance from "../pages/Dashboard/Admin/Balance/Balance";
+import ManageMember from "../pages/Dashboard/Trainer/ManageMember/ManageMember";
 
 const router = createBrowserRouter([
   {
@@ -100,6 +102,10 @@ const router = createBrowserRouter([
         element: <Payment />,
         loader: ({ params }) => axiosPublic.get(`trainer-details/${params.id}`),
       },
+      {
+        path: "balance",
+        element: <Balance />,
+      },
       // trainer routes
       {
         path: "add-class",
@@ -112,6 +118,10 @@ const router = createBrowserRouter([
       {
         path: "manage-slots",
         element: <ManageSlots />,
+      },
+      {
+        path: "manage-member",
+        element: <ManageMember />,
       },
       // member routes
       {
