@@ -20,6 +20,7 @@ import AppliedTrainer from "../pages/Dashboard/Admin/AppliedTrainer/AppliedTrain
 import AllTrainers from "../pages/Dashboard/Admin/AllTrainers/AllTrainers";
 import ManageSlots from "../pages/Dashboard/Trainer/ManageSlots/ManageSlots";
 import ActivityLog from "../pages/Dashboard/Member/ActivityLog/ActivityLog";
+import RecommendedClasses from "../pages/Dashboard/Member/RecommendedClasses/RecommendedClasses";
 
 const router = createBrowserRouter([
   {
@@ -109,6 +110,10 @@ const router = createBrowserRouter([
       {
         path: "activity",
         element: <ActivityLog />,
+      },
+      {
+        path: "recommended-classes",
+        element: <RecommendedClasses />,
       },
     ],
   },

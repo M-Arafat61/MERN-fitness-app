@@ -48,7 +48,7 @@ const ActivityLog = () => {
         <Clock />
         <SectionTitle heading="Today's Activity" />
         <div className='mt-6'>
-          {todayActivity.map((booking, idx) => (
+          {todayActivity.map(booking => (
             <div
               className='border border-gray-200 p-4 rounded mb-4'
               key={booking._id}
