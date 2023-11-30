@@ -30,7 +30,7 @@ const TrainerProfile = () => {
       <Helmet>
         <title>SyncFit Connect | Trainers</title>
       </Helmet>
-      <div className='container mx-auto py-6'>
+      <div className='container mx-auto my-16'>
         <div>
           <SectionTitle heading={"Trainer Profiles"}></SectionTitle>
         </div>

@@ -1,8 +1,6 @@
-# Website Name:
+# Website Name:SyncFit Connect
 
-## Hosting URL: <>
-
-- ## Project features
+## Hosting URL: <https://sync-fit-connect.web.app/>
 
 - ## Project features
 

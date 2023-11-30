@@ -9,7 +9,7 @@ const Footer = () => {
           <div className='flex flex-col items-center justify-between gap-5'>
             <a href='#' className='mx-auto '>
               <img
-                src='/src/assets/Images/logo.jpg'
+                src='https://i.ibb.co/vhKPqcJ/logo.jpg'
                 alt='Syncfit Connect Logo'
                 className='w-24 rounded-full'
               />

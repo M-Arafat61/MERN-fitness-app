@@ -63,7 +63,7 @@ const Navbar = () => {
             <div className='hidden md:flex w-20 '>
               <img
                 className='rounded-full '
-                src='/src/assets/Images/logo.jpg'
+                src='https://i.ibb.co/vhKPqcJ/logo.jpg'
                 alt=''
               />
             </div>
