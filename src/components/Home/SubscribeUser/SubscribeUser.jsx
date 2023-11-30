@@ -2,7 +2,9 @@ import toast from "react-hot-toast";
 import subscribeImg from "../../../assets/Images/Subscribe/trans-man-exercising-gym.jpg";
 import { axiosPublic } from "../../../hooks/useAxiosPublic";
 import Container from "../../Shared/Container/Container";
+import useAuth from "../../../hooks/useAuth";
 const SubscribeUser = () => {
+  const { user } = useAuth();
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
@@ -56,12 +58,23 @@ const SubscribeUser = () => {
                     className='bg-white border border-gray-300 rounded-lg mb-4 px-4 py-2'
                     required
                   />
-                  <button
-                    type='submit'
-                    className='bg-extended-teal text-lg uppercase text-white rounded-lg px-6 py-3 font-semibold hover:bg-opacity-90 transition duration-300'
-                  >
-                    Subscribe Now
-                  </button>
+
+                  {user?.email ? (
+                    <button
+                      disabled
+                      type='submit'
+                      className='bg-extended-teal text-lg uppercase text-white rounded-lg px-6 py-3 font-semibold hover:bg-opacity-90 transition duration-300'
+                    >
+                      Subscribe Now
+                    </button>
+                  ) : (
+                    <button
+                      type='submit'
+                      className='bg-extended-teal text-lg uppercase text-white rounded-lg px-6 py-3 font-semibold hover:bg-opacity-90 transition duration-300'
+                    >
+                      Subscribe Now
+                    </button>
+                  )}
                 </form>
               </div>
             </div>
