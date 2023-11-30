@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import AboutUs from "../../components/Home/AboutSection/AboutUs";
 import Carousal from "../../components/Home/Banner/Carousal";
 import FeaturedClasses from "../../components/Home/FeaturedClass/FeaturedClasses";
@@ -9,7 +10,10 @@ import Team from "../../components/Home/TeamSection/Team";
 
 const Home = () => {
   return (
-    <>
+    <div>
+      <Helmet>
+        <title>SyncFit Connect | Home</title>
+      </Helmet>
       <Carousal />
       <Features />
       <div className='bg-[#9DB2BF]'>
@@ -22,7 +26,7 @@ const Home = () => {
       <LatesArticles />
       <SubscribeUser />
       <Team />
-    </>
+    </div>
   );
 };
 

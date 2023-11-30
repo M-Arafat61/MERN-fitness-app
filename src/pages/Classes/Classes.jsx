@@ -4,6 +4,7 @@ import useAuth from "../../hooks/useAuth";
 import { axiosPublic } from "../../hooks/useAxiosPublic";
 import WeeklySchedule from "../../components/Classes/WeeklySchedule";
 import ClassesCard from "../../components/Classes/ClassesCard";
+import { Helmet } from "react-helmet-async";
 
 const Classes = () => {
   // const [bookings, setBookings] = useState([]);
@@ -28,6 +29,9 @@ const Classes = () => {
 
   return (
     <Container>
+      <Helmet>
+        <title>SyncFit Connect | Classes</title>
+      </Helmet>
       <WeeklySchedule classes={classes} />
 
       <div className='text-3xl font-bold mt-16'>Classes With Best Trainers</div>

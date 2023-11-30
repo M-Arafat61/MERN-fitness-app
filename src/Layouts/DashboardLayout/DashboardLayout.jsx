@@ -2,11 +2,15 @@ import { Outlet } from "react-router-dom";
 import Sidebar from "../../components/Dashboard/Sidebar/Sidebar";
 import Container from "../../components/Shared/Container/Container";
 import useAuth from "../../hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 const DashboardLayout = () => {
   const { user } = useAuth();
   return (
     <Container>
+      <Helmet>
+        <title>SyncFit Connect | Dashboard</title>
+      </Helmet>
       <div className='flex'>
         <div className='bg-[#526D82] w-44  md:w-64 min-h-screen space-y-20 pt-10 '>
           <div className='flex flex-col items-center space-y-2'>

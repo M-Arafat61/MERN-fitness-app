@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
 import GridLoader from "react-spinners/GridLoader";
+import { Helmet } from "react-helmet-async";
 
 const TrainerProfile = () => {
   const { loading } = useAuth();
@@ -26,6 +27,9 @@ const TrainerProfile = () => {
   }
   return (
     <Container>
+      <Helmet>
+        <title>SyncFit Connect | Trainers</title>
+      </Helmet>
       <div className='container mx-auto py-6'>
         <div>
           <SectionTitle heading={"Trainer Profiles"}></SectionTitle>

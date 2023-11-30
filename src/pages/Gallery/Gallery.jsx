@@ -2,6 +2,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import Container from "../../components/Shared/Container/Container";
 import { axiosPublic } from "../../hooks/useAxiosPublic";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { Helmet } from "react-helmet-async";
 
 const getImages = async ({ pageParam = 0 }) => {
   const { data } = await axiosPublic.get(
@@ -32,6 +33,9 @@ const Gallery = () => {
   // console.log(images);
   return (
     <Container>
+      <Helmet>
+        <title>SyncFit Connect | Gallery</title>
+      </Helmet>
       <div className='sticky bg-fixed bg-[#526D82] py-10 top-0 z-50 text-center text-3xl font-bold overflow-hidden text-white'>
         Image Gallery
       </div>
