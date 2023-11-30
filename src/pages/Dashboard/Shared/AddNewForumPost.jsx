@@ -1,8 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import toast from "react-hot-toast";
+import useTrainer from "../../../hooks/useTrainer";
+import useAdmin from "../../../hooks/useAdmin";
+import { useNavigate } from "react-router-dom";
 
 const AddNewForumPost = () => {
+  const [isAdmin] = useAdmin();
+  const [isTrainer] = useTrainer();
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -34,6 +41,12 @@ const AddNewForumPost = () => {
       console.error("Error posting data:", error);
     }
   };
+
+  useEffect(() => {
+    if (!isAdmin && !isTrainer) {
+      navigate("/dashboard");
+    }
+  }, [isAdmin, isTrainer, navigate]);
 
   return (
     <div className='w-3/4 mx-auto mt-14'>

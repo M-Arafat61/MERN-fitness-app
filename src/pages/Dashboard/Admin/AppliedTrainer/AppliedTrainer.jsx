@@ -4,11 +4,13 @@ import { Icon } from "@iconify/react";
 import { useState } from "react";
 import Modal from "react-modal";
 import toast from "react-hot-toast";
+import ApplicationReject from "./ApplicationReject";
 Modal.setAppElement("#root");
 
 const AppliedTrainer = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [selectedApplication, setSelectedApplication] = useState(null);
+  const [rejectModalIsOpen, setRejectModalIsOpen] = useState(false);
 
   const axiosSecure = useAxiosSecure();
 
@@ -52,6 +54,20 @@ const AppliedTrainer = () => {
       });
   };
 
+  const rejectApplication = application => {
+    setSelectedApplication(application);
+    setRejectModalIsOpen(true);
+  };
+  const closeRejectModal = () => {
+    setSelectedApplication(null);
+    setRejectModalIsOpen(false);
+  };
+
+  const formattedTime = time => {
+    const [hours, minutes] = time.split(":");
+    return `${hours}:${minutes}`;
+  };
+
   return (
     <div className='mt-10'>
       <table className='table '>
@@ -80,33 +96,70 @@ const AppliedTrainer = () => {
         ))}
       </table>
 
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel='Example Modal'
-      >
-        <h2> {selectedApplication?.name} </h2>
-        <h2> {selectedApplication?.email} </h2>
-        {selectedApplication?.skills?.map(skill => (
-          <p key={skill}>{skill}</p>
-        ))}
-
-        <div className='flex justify-between mt-2'>
-          <button
-            onClick={() => acceptApplication(selectedApplication)}
-            className='btn-sm btn'
-          >
-            Accept
-          </button>
-          <button
-            className='btn-sm btn bg-extended-teal text-white'
-            onClick={closeModal}
-          >
-            close
-          </button>
-        </div>
-      </Modal>
+      <div className='w-3/4 mx-auto'>
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          style={customStyles}
+          contentLabel='Example Modal'
+        >
+          <h2 className='text-xl font-bold'> {selectedApplication?.name} </h2>
+          <h2 className='mb-2'> {selectedApplication?.email} </h2>
+          <p> Skills:</p>
+          {selectedApplication?.skills?.map((skill, idx) => (
+            <p key={skill}>
+              {idx + 1}, {skill}
+            </p>
+          ))}
+          <p className='mt-2'>
+            Available slots: {selectedApplication?.availableSlots}
+          </p>
+          <p className='mt-2'>Time Slot of days:</p>
+          {Object.entries(selectedApplication?.timeSlotOfDays || {}).map(
+            ([day, slots]) => (
+              <div key={day}>
+                <h3>{day.charAt(0).toUpperCase() + day.slice(1)}</h3>
+                {slots.map((slot, index) => (
+                  <div key={index}>
+                    <p>
+                      Time: {formattedTime(slot.start)} -{" "}
+                      {formattedTime(slot.end)}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )
+          )}
+          <div className='flex justify-between gap-4 mt-2'>
+            <button
+              onClick={() => acceptApplication(selectedApplication)}
+              className='btn-sm btn'
+            >
+              Accept
+            </button>
+            <button
+              onClick={() => rejectApplication(selectedApplication)}
+              className='btn-sm btn'
+            >
+              Reject
+            </button>
+            <button
+              className='btn-sm btn bg-extended-teal text-white'
+              onClick={closeModal}
+            >
+              close
+            </button>
+          </div>
+        </Modal>
+        <Modal
+          isOpen={rejectModalIsOpen}
+          onRequestClose={closeRejectModal}
+          style={customStyles}
+          contentLabel='Reject Modal'
+        >
+          <ApplicationReject closeRejectModal={closeRejectModal} />
+        </Modal>
+      </div>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 const RecommendedClasses = () => {
   const [classes, setClasses] = useState([]);
@@ -28,7 +29,7 @@ const RecommendedClasses = () => {
   const randomClasses = getRandomClasses(classes, 3);
 
   return (
-    <div className='mt-6 grid gap-6 grid-cols-1 md:grid-cols-3'>
+    <div className='mt-6 grid gap-6 grid-cols-1 '>
       {randomClasses.map(cls => (
         <div
           key={cls._id}
@@ -48,6 +49,13 @@ const RecommendedClasses = () => {
               <p className='font-semibold'>{cls.instructor}</p>
               <p className='text-gray-500'>{cls.location}</p>
             </div>
+          </div>
+          <div className='mt-5'>
+            <Link to='/trainer'>
+              <button className='uppercase font-bold px-2 py-1 bg-extended-teal rounded-lg overflow-hidden text-white'>
+                Join Class
+              </button>
+            </Link>
           </div>
         </div>
       ))}

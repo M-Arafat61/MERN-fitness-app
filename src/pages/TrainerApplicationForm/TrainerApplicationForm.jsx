@@ -8,8 +8,6 @@ import { useNavigate } from "react-router-dom";
 const TrainerApplicationForm = () => {
   const { user } = useAuth();
 
-  console.log(user);
-
   const [skills, setSkills] = useState([]);
   const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();

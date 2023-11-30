@@ -25,6 +25,9 @@ import ProfileSettings from "../pages/Dashboard/Member/ProfileSettings/ProfileSe
 import Payment from "../components/Dashboard/Admin/TrainerPayment/Payment";
 import Balance from "../pages/Dashboard/Admin/Balance/Balance";
 import ManageMember from "../pages/Dashboard/Trainer/ManageMember/ManageMember";
+import PrivateRoute from "./PrivateRoute";
+import AdminRoute from "./AdminRoute";
+import TrainerRoute from "./TrainerRoute";
 
 const router = createBrowserRouter([
   {
@@ -60,11 +63,19 @@ const router = createBrowserRouter([
       },
       {
         path: "booking-slot/:id/:day/:index",
-        element: <BookingSlot />,
+        element: (
+          <PrivateRoute>
+            <BookingSlot />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/trainer-application-form",
-        element: <TrainerApplicationForm />,
+        element: (
+          <PrivateRoute>
+            <TrainerApplicationForm />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/community",
@@ -87,29 +98,53 @@ const router = createBrowserRouter([
       // admin routes
       {
         path: "subscribers",
-        element: <AllSubscribers />,
+        element: (
+          <AdminRoute>
+            <AllSubscribers />
+          </AdminRoute>
+        ),
       },
       {
         path: "trainer-applications",
-        element: <AppliedTrainer />,
+        element: (
+          <AdminRoute>
+            <AppliedTrainer />
+          </AdminRoute>
+        ),
       },
       {
         path: "trainers",
-        element: <AllTrainers />,
+        element: (
+          <AdminRoute>
+            <AllTrainers />
+          </AdminRoute>
+        ),
       },
       {
         path: "trainer-payment/:id",
-        element: <Payment />,
+        element: (
+          <AdminRoute>
+            <Payment />
+          </AdminRoute>
+        ),
         loader: ({ params }) => axiosPublic.get(`trainer-details/${params.id}`),
       },
       {
         path: "balance",
-        element: <Balance />,
+        element: (
+          <AdminRoute>
+            <Balance />
+          </AdminRoute>
+        ),
       },
       // trainer routes
       {
         path: "add-class",
-        element: <AddNewClass />,
+        element: (
+          <TrainerRoute>
+            <AddNewClass />
+          </TrainerRoute>
+        ),
       },
       {
         path: "add-forum",
@@ -117,24 +152,44 @@ const router = createBrowserRouter([
       },
       {
         path: "manage-slots",
-        element: <ManageSlots />,
+        element: (
+          <TrainerRoute>
+            <ManageSlots />
+          </TrainerRoute>
+        ),
       },
       {
         path: "manage-member",
-        element: <ManageMember />,
+        element: (
+          <TrainerRoute>
+            <ManageMember />
+          </TrainerRoute>
+        ),
       },
       // member routes
       {
         path: "activity",
-        element: <ActivityLog />,
+        element: (
+          <PrivateRoute>
+            <ActivityLog />
+          </PrivateRoute>
+        ),
       },
       {
         path: "recommended-classes",
-        element: <RecommendedClasses />,
+        element: (
+          <PrivateRoute>
+            <RecommendedClasses />
+          </PrivateRoute>
+        ),
       },
       {
         path: "settings",
-        element: <ProfileSettings />,
+        element: (
+          <PrivateRoute>
+            <ProfileSettings />
+          </PrivateRoute>
+        ),
       },
     ],
   },

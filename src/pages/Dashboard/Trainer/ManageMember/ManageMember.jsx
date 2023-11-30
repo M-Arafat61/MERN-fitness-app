@@ -18,6 +18,10 @@ const ManageMember = () => {
     },
   });
 
+  const handleInstructions = async () => {
+    console.log("object");
+  };
+
   return (
     <Container>
       <div className='flex flex-col gap-4 mt-10'>
@@ -36,7 +40,10 @@ const ManageMember = () => {
               </div>
             </div>
             <div className='text-right'>
-              <button className='bg-extended-teal hover:bg-teal-300 text-white py-2 px-4 rounded-md'>
+              <button
+                onClick={handleInstructions}
+                className='bg-extended-teal hover:bg-teal-300 text-white py-2 px-4 rounded-md'
+              >
                 Send Instruction
               </button>
             </div>
