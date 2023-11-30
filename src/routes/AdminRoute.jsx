@@ -1,4 +1,4 @@
-import { CircleLoader } from "react-spinners";
+import { GridLoader } from "react-spinners";
 
 import { Navigate, useLocation } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
@@ -12,7 +12,7 @@ const AdminRoute = ({ children }) => {
   if (loading || isAdminLoading)
     return (
       <div className='min-h-screen flex justify-center items-center'>
-        <CircleLoader color='#a85232' size={100} />;
+        <GridLoader color='#818FB4' size={40} />;
       </div>
     );
   if (user && isAdmin) return children;

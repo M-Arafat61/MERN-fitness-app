@@ -47,7 +47,9 @@ const Balance = () => {
         totalSlotBookingFee={totalSlotBookingFee}
         totalRemainingBalance={totalRemainingBalance}
       />
-      <BalanceChart chartData={subsMembers} />
+      <div className='flex justify-center mb-5'>
+        <BalanceChart chartData={subsMembers} />
+      </div>
     </Container>
   );
 };

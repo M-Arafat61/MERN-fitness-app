@@ -12,21 +12,21 @@ const AllSubscribers = () => {
     };
     fetchSubscribers();
   }, [axiosSecure]);
-
+  console.log(subscribers);
   return (
-    <div className='mt-16'>
+    <div className='mt-16 border border-extended-teal mr-2'>
       <table className='table '>
-        <thead className=' '>
+        <thead className='text-black '>
           <tr className='text-lg'>
             <th></th>
-            <th>Name</th>
-            <th>Email</th>
+            <th>Subscribers Name</th>
+            <th>Subscribers Email</th>
           </tr>
         </thead>
 
         {subscribers.map((subscriber, index) => (
           <tbody key={subscriber._id}>
-            <tr>
+            <tr className='text-black'>
               <td>{index + 1}.</td>
               <td>{subscriber.name}</td>
 

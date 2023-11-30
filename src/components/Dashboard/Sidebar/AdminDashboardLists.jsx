@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 const AdminDashboardLists = () => {
   return (
     <Container>
-      <ul className='pl-10 text-lg font-medium gap-2 space-y-2 tracking-wider uppercase'>
+      <ul className='md:pl-10 text-lg font-medium gap-2 space-y-2 tracking-wider uppercase'>
         <li className='flex items-center gap-2 hover:font-bold '>
           <Icon className='text-2xl' icon='iconamoon:home-bold' />
           <NavLink

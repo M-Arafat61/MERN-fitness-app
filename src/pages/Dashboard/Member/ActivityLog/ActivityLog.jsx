@@ -41,32 +41,39 @@ const ActivityLog = () => {
 
   // Filter today's activity
   const todayActivity = bookings.filter(getCurrentDayActivity);
+  console.log(todayActivity);
 
   return (
     <Container>
-      <div className='mt-10'>
+      <div className='mt-10 mr-2'>
         <Clock />
         <SectionTitle heading="Today's Activity" />
         <div className='mt-6'>
           {todayActivity.map(booking => (
             <div
-              className='border border-gray-200 p-4 rounded mb-4'
+              className='border border-extended-teal p-4 rounded mb-4'
               key={booking._id}
             >
-              <div className='flex items-center justify-between mb-2'>
-                <h2 className='text-2xl font-semibold'>{booking.trainer}</h2>
-                <p className='text-gray-500'>{booking.bookedSlot.day}</p>
+              <div className='flex flex-col mb-2'>
+                <h2 className='text-2xl font-semibold'>
+                  Trainer: {booking.trainer}
+                </h2>
+                <p>Trainer Email: {booking.trainerEmail}</p>
+                <p className=''>Day: {booking.bookedSlot.day}</p>
               </div>
+
               <div className='flex justify-between mb-2'>
-                <div className='flex gap-2'>
-                  <p className='font-semibold'>
-                    From: {booking.bookedSlot.classTime.start}
-                  </p>
-                  <p className='font-semibold'>
-                    To: {booking.bookedSlot.classTime.end}
-                  </p>
+                <div className='flex items-start flex-col gap-2'>
+                  <p className='text-lg font-semibold underline'>Booked Slot</p>
+                  <div className='flex gap-2'>
+                    <p className='font-semibold'>
+                      From- {booking.bookedSlot.classTime.start}
+                    </p>
+                    <p className='font-semibold'>
+                      To- {booking.bookedSlot.classTime.end}
+                    </p>
+                  </div>
                 </div>
-                {/* <p className='text-gray-500'>{idx + 1}.</p> */}
               </div>
               <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                 {booking.classes.map(cls => {

@@ -10,7 +10,7 @@ const PrivateRoute = ({ children }) => {
   if (loading)
     return (
       <div className='min-h-screen flex justify-center items-center'>
-        <GridLoader color='#96EFFF' size={100} />;
+        <GridLoader color='#96EFFF' size={30} />;
       </div>
     );
   if (user) return children;

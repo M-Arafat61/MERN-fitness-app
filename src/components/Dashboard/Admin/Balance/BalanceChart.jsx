@@ -1,6 +1,6 @@
 import { PieChart, Pie, Cell, Legend } from "recharts";
 
-const COLORS = ["pink", "#D99904"];
+const COLORS = ["#818FB4", "#64CCC5"];
 
 const BalanceChart = ({ chartData }) => {
   const RADIAN = Math.PI / 180;

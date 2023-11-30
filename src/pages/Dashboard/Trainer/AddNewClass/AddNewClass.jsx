@@ -56,7 +56,7 @@ const AddNewClass = () => {
   return (
     <div className='hero mt-10'>
       <div className='hero-content flex-col '>
-        <div className=' w-full text-lg  bg-base-100'>
+        <div className='w-full text-lg  bg-base-100'>
           <form
             onSubmit={handleAddClass}
             className='card-body shadow-md space-y-5'
@@ -202,7 +202,10 @@ const AddNewClass = () => {
               </div>
             </div>
 
-            <button className='bg-extended-teal w-full py-2 ' type='submit'>
+            <button
+              className='bg-extended-teal w-full py-2 text-white font-bold uppercase'
+              type='submit'
+            >
               Add Classes
             </button>
           </form>

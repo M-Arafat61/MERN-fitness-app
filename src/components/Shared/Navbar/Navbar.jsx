@@ -33,7 +33,7 @@ const Navbar = () => {
 
   return (
     <Container>
-      <div className='navbar py-8 text-white shadow-lg'>
+      <div className='navbar py-3 text-white'>
         <div className='navbar-start'>
           <div className='dropdown z-10 '>
             <label tabIndex={0} className='btn btn-ghost md:hidden'>

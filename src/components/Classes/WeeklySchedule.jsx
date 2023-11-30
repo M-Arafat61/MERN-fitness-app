@@ -23,7 +23,7 @@ const WeeklySchedule = ({ classes }) => {
       <div>
         {filteredClasses.map((cls, idx) => (
           <div
-            className='flex flex-col gap-2 border px-5 py-2 mb-5 rounded-xl overflow-hidden'
+            className='flex flex-col gap-2 border px-5 py-2 mb-5 rounded-xl '
             key={cls._id}
           >
             <p>{idx + 1}.</p>
@@ -48,8 +48,8 @@ const WeeklySchedule = ({ classes }) => {
           selectedIndex={selectedTab}
           onSelect={index => setSelectedTab(index)}
         >
-          <TabList className='flex mb-5 border-0 text-xl font-semibold'>
-            <div className='flex gap-2 md:gap-5'>
+          <TabList className='flex items-center justify-center mb-5 border-0 text-xl font-semibold'>
+            <div className='flex flex-col md:flex-row  gap-5'>
               {daysOfWeek.map((day, index) => (
                 <Tab
                   key={day}

@@ -66,18 +66,17 @@ const TrainerProfile = () => {
             </div>
           ))}
         </div>
-        <div className='flex mt-10  items-start p-6'>
-          <Link to='/trainer-application-form'>
-            <button className='px-16 uppercase hover:text-white font-bold  py-2 bg-extended-teal hover:bg-gradient-to-r from-fuchsia-700 to-violet-700 rounded-r-full overflow-hidden'>
-              Be a Trainer{" "}
-              <Icon
-                className='inline-flex text-2xl ml-2'
-                icon={"ant-design:form-outlined"}
-              ></Icon>
-            </button>
-          </Link>
-        </div>
       </div>
+
+      <Link to='/trainer-application-form'>
+        <button className='px-4 md:px-16 uppercase text-white font-bold  py-2 mx-auto w-3/5 mt-5 flex justify-center bg-extended-teal hover:bg-gradient-to-r from-[#526D82] to-teal-500 rounded-xl overflow-hidden'>
+          Be a Trainer
+          <Icon
+            className='inline-flex text-2xl ml-2'
+            icon={"ant-design:form-outlined"}
+          ></Icon>
+        </button>
+      </Link>
     </Container>
   );
 };

@@ -29,7 +29,7 @@ const RecommendedClasses = () => {
   const randomClasses = getRandomClasses(classes, 3);
 
   return (
-    <div className='mt-6 grid gap-6 grid-cols-1 '>
+    <div className='mt-6 grid gap-6 grid-cols-1 border'>
       {randomClasses.map(cls => (
         <div
           key={cls._id}

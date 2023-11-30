@@ -28,11 +28,13 @@ import ManageMember from "../pages/Dashboard/Trainer/ManageMember/ManageMember";
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
 import TrainerRoute from "./TrainerRoute";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -93,6 +95,7 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard",
+
     element: <DashboardLayout />,
     children: [
       // admin routes

@@ -31,7 +31,7 @@ const Classes = () => {
       <WeeklySchedule classes={classes} />
 
       <div className='text-3xl font-bold mt-16'>Classes With Best Trainers</div>
-      <div className='grid grid-cols-3 gap-5 mt-10'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10'>
         {classes.map(eachClass => (
           <ClassesCard key={eachClass._id} eachClass={eachClass}></ClassesCard>
         ))}

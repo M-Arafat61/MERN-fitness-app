@@ -69,10 +69,10 @@ const AppliedTrainer = () => {
   };
 
   return (
-    <div className='mt-10'>
+    <div className='mt-10 border border-extended-teal mr-2'>
       <table className='table '>
         <thead className=' '>
-          <tr className='text-lg'>
+          <tr className='text-lg text-black'>
             <th></th>
             <th>Applicant Name</th>
             <th>Applicant Email</th>

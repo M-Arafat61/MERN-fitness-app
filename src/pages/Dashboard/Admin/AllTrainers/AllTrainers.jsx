@@ -46,7 +46,7 @@ const AllTrainers = () => {
   };
 
   return (
-    <div className='mt-10'>
+    <div className='mt-10 border border-extended-teal mr-2'>
       <table className='table'>
         <thead className='text-black '>
           <tr className='text-lg'>

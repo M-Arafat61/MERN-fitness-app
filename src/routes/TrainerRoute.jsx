@@ -12,7 +12,7 @@ const TrainerRoute = ({ children }) => {
   if (loading || isTrainerLoading)
     return (
       <div className='min-h-screen flex justify-center items-center'>
-        <CircleLoader color='#a85232' size={100} />;
+        <CircleLoader color='#818FB4' size={30} />;
       </div>
     );
   if (user && isTrainer) return children;

@@ -12,7 +12,7 @@ const ClassesCard = ({ eachClass }) => {
       <h2 className='text-lg font-semibold'>Instructor-{instructor}</h2>
 
       <Link to={`/class-details/${_id}`}>
-        <button className='bg-extended-teal hover:bg-emerald-400 text-white font-semibold py-2 px-4 rounded'>
+        <button className='bg-extended-teal hover:bg-teal-400 text-white font-semibold py-2 px-4 rounded'>
           Details
         </button>
       </Link>

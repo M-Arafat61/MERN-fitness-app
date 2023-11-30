@@ -49,10 +49,10 @@ const AddNewForumPost = () => {
   }, [isAdmin, isTrainer, navigate]);
 
   return (
-    <div className='w-3/4 mx-auto mt-14'>
+    <div className='md:w-3/4 mx-auto mt-14'>
       <div className='flex flex-col '>
         <div className=' text-lg bg-base-100'></div>
-        <h2>Add New Forum</h2>
+        <h2 className='text-3xl font-bold mb-5'>Add New Forum</h2>
 
         <form onSubmit={handleSubmit} className=' shadow-md space-y-5 p-5'>
           <div className='form-control '>
@@ -106,7 +106,10 @@ const AddNewForumPost = () => {
               required
             />
           </div>
-          <button className='bg-extended-teal w-full py-2 ' type='submit'>
+          <button
+            className='bg-extended-teal w-full py-2 font-bold text-white uppercase'
+            type='submit'
+          >
             Add Forum
           </button>
         </form>

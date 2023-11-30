@@ -32,8 +32,10 @@ const ManageMember = () => {
           >
             <div className='flex justify-between items-center mb-2'>
               <div>
-                <h2 className='text-xl font-semibold'>{member.userName}</h2>
-                <p className='text-gray-500'>{member.userEmail}</p>
+                <h2 className='text-xl font-semibold'>
+                  Name: {member.userName}
+                </h2>
+                <p className='text-gray-500'>Email: {member.userEmail}</p>
               </div>
               <div>
                 <p className='text-lg font-semibold'>{member.package.name}</p>
