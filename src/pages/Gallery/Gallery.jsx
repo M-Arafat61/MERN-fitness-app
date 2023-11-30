@@ -17,7 +17,8 @@ const Gallery = () => {
     queryFn: getImages,
     getNextPageParam: lastPage => {
       if (lastPage.prevOffset + 12 > lastPage.articlesCount) {
-        return false;
+        // Stop infinite loop when all images are shown
+        return null;
       }
       return lastPage.prevOffset + 12;
     },
@@ -31,10 +32,10 @@ const Gallery = () => {
   // console.log(images);
   return (
     <Container>
-      <div className='sticky bg-fixed bg-extended-teal py-10 top-0 z-50 text-center text-3xl font-bold rounded-t-2xl overflow-hidden text-white'>
+      <div className='sticky bg-fixed bg-[#526D82] py-10 top-0 z-50 text-center text-3xl font-bold overflow-hidden text-white'>
         Image Gallery
       </div>
-      <div className='sticky top-20  '>
+      <div className='sticky top-20  '>
         <InfiniteScroll
           dataLength={images ? images.length : 0}
           next={() => fetchNextPage()}

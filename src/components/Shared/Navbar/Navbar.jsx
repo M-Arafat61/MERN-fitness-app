@@ -26,16 +26,16 @@ const Navbar = () => {
         <CustomNavLink to='/dashboard'>Dashboard</CustomNavLink>
       </div>
       <div className=''>
-        <CustomNavLink to='/community'>Community/Forums</CustomNavLink>
+        <CustomNavLink to='/community'>Forums</CustomNavLink>
       </div>
     </div>
   );
 
   return (
     <Container>
-      <div className='navbar py-8'>
+      <div className='navbar py-8 text-white shadow-lg'>
         <div className='navbar-start'>
-          <div className='dropdown'>
+          <div className='dropdown z-10 '>
             <label tabIndex={0} className='btn btn-ghost md:hidden'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -54,13 +54,23 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className='menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52'
+              className='menu menu-compact dropdown-content mt-3 p-2 shadow bg-[#27374D] rounded-box w-40'
             >
               {navItems}
             </ul>
           </div>
-          <div className='normal-case text-xl'>
-            SyncFit <span className='text-extended-teal'>Connect</span>
+          <div className='flex justify-center items-center flex-col'>
+            <div className='hidden md:flex w-20 '>
+              <img
+                className='rounded-full '
+                src='/src/assets/Images/logo.jpg'
+                alt=''
+              />
+            </div>
+            <div className='text-2xl font-bold '>
+              SyncFit
+              <span className='text-extended-teal font-bold '>Connect</span>
+            </div>
           </div>
         </div>
         <div className='navbar-center hidden md:flex'>

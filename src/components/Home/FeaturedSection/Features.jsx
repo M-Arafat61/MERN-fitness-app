@@ -12,9 +12,11 @@ import yogaImg from "../../../assets/Images/Features/yoga.jpg";
 const Features = () => {
   return (
     <Container>
-      <div className='mt-16'>
-        <div className='text-5xl uppercase font-bold mb-10'>Our Features</div>
-        <div className='grid grid-cols-3 gap-5'>
+      <div className='mt-10 md:mt-16 '>
+        <div className='text-2xl md:text-5xl font-bold mb-5 md:mb-10 bg-extended-gray text-center py-5'>
+          Our Features
+        </div>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 '>
           <FeaturesCard
             cardImage={personalizedImg}
             cardTitle={"Personalized Workout Plans"}

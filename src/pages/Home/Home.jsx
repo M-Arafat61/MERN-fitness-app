@@ -12,9 +12,13 @@ const Home = () => {
     <>
       <Carousal />
       <Features />
-      <AboutUs />
+      <div className='bg-[#9DB2BF]'>
+        <AboutUs />
+      </div>
       <FeaturedClasses />
-      <Reviews />
+      <div className='bg-[#526D82]'>
+        <Reviews />
+      </div>
       <LatesArticles />
       <SubscribeUser />
       <Team />

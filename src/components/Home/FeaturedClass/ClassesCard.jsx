@@ -2,7 +2,7 @@ const ClassesCard = ({ eachClass }) => {
   // console.log(eachClass);
   const { photo, title, instructor, difficulty } = eachClass;
   return (
-    <div className='mt-10'>
+    <div className='md:mt-10'>
       <div className='flex justify-between flex-col bg-base-100 shadow-xl space-y-2'>
         <div className='text-center'>
           <h2 className='text-xl font-medium'>{title}</h2>

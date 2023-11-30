@@ -4,8 +4,12 @@ import Container from "../../components/Shared/Container/Container";
 import SectionTitle from "../../components/Shared/SectionTitle";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+
+import GridLoader from "react-spinners/GridLoader";
 
 const TrainerProfile = () => {
+  const { loading } = useAuth();
   const { data: trainerData = [] } = useQuery({
     queryKey: ["trainers"],
     queryFn: async () => {
@@ -13,8 +17,13 @@ const TrainerProfile = () => {
       return res.data;
     },
   });
-  // console.log(trainerData);
-
+  if (loading) {
+    return (
+      <div className='min-h-screen flex justify-center items-center text-2xl'>
+        <GridLoader color='#96EFFF' size={100} />;
+      </div>
+    );
+  }
   return (
     <Container>
       <div className='container mx-auto py-6'>

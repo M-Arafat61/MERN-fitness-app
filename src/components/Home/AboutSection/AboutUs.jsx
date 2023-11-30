@@ -4,11 +4,13 @@ import aboutImg from "../../../assets/Images/AboutUs/2150847945.jpg";
 const AboutUs = () => {
   return (
     <Container>
-      <section className='py-16'>
+      <section className='my-16'>
         <div className='container mx-auto '>
-          <h2 className='text-5xl font-bold mb-8'>
-            <span className='uppercase'>About</span> SyncFit
-          </h2>
+          <div className=''>
+            <h2 className='text-2xl md:text-5xl font-bold mb-8  py-5'>
+              <span className=''>About</span> SyncFit
+            </h2>
+          </div>
           <div className='flex flex-col md:flex-row items-center justify-between'>
             <div className='md:w-1/2 md:pr-8 mb-6 md:mb-0'>
               <p className='text-lg leading-relaxed'>
@@ -32,17 +34,6 @@ const AboutUs = () => {
               />
             </div>
           </div>
-
-          {/* <div className='mt-12'>
-            <h3 className='text-2xl font-bold mb-4'>Our Team</h3>
-            <p className='text-lg leading-relaxed'>
-              The SyncFit team is a diverse group of fitness enthusiasts,
-              experts, and tech innovators dedicated to creating an inclusive
-              and motivating fitness ecosystem. We're committed to continuously
-              improving our platform and supporting our community in their
-              fitness journeys.
-            </p>
-          </div> */}
         </div>
       </section>
     </Container>

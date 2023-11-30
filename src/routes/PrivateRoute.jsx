@@ -1,6 +1,6 @@
 import { Navigate, useLocation } from "react-router-dom";
 
-import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
+import GridLoader from "react-spinners/GridLoader";
 import useAuth from "../hooks/useAuth";
 
 const PrivateRoute = ({ children }) => {
@@ -10,7 +10,7 @@ const PrivateRoute = ({ children }) => {
   if (loading)
     return (
       <div className='min-h-screen flex justify-center items-center'>
-        <ClimbingBoxLoader color='#a85232' size={100} />;
+        <GridLoader color='#96EFFF' size={100} />;
       </div>
     );
   if (user) return children;

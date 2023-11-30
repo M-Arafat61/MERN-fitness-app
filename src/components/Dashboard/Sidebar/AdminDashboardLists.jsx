@@ -40,6 +40,17 @@ const AdminDashboardLists = () => {
             Applied Trainers
           </NavLink>
         </li>
+        <li className='flex items-center gap-2 hover:font-bold '>
+          <Icon className='text-2xl' icon='uiw:menu' />
+          <NavLink
+            to='/dashboard/add-forum'
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "underline font-bold" : ""
+            }
+          >
+            Add new Forum
+          </NavLink>
+        </li>
 
         <li className='flex items-center gap-2 hover:font-bold '>
           <Icon className='text-2xl' icon='bxs:food-menu' />

@@ -25,8 +25,10 @@ const Reviews = () => {
 
   return (
     <Container>
-      <div className='my-20'>
-        <SectionTitle heading={"Testimonials"}></SectionTitle>
+      <div className='my-10 md:my-20'>
+        <div className='text-white py-5 px-3'>
+          <SectionTitle heading={"Testimonials"}></SectionTitle>
+        </div>
         <Swiper
           navigation={false}
           autoplay={{
@@ -38,7 +40,7 @@ const Reviews = () => {
         >
           {reviews.map(review => (
             <SwiperSlide key={review._id}>
-              <div className='my-10 px-20 flex flex-col items-center space-y-5 text-center'>
+              <div className='mb-5 md:my-10 px-2 md:px-20 flex flex-col items-center space-y-5 text-center text-white'>
                 <Icon className='text-4xl' icon='carbon:review' />
                 <p className='text-lg'>{review.quote}</p>
                 <h3 className='text-extended-yellow text-2xl'>{review.name}</h3>

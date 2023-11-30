@@ -32,13 +32,15 @@ const LatesArticles = () => {
   return (
     <Container>
       <div className='mx-auto my-10 gap-5'>
-        <h2 className='text-5xl font-bold px-3'>Latest Articles</h2>
+        <h2 className='text-2xl md:text-5xl font-bold px-3 bg-extended-gray py-5'>
+          Latest Articles
+        </h2>
       </div>
-      <div className='flex flex-col gap-8'>
+      <div className='flex flex-col gap-8 '>
         {articles.map(post => (
           <div
             key={post._id}
-            className='shadow-sm rounded-xl overflow-hidden p-5 space-y-3'
+            className='shadow-sm border border-extended-gray rounded-xl overflow-hidden p-5 space-y-3'
           >
             <h3 className='text-xl font-bold'>{post.title}</h3>
             <p>{post.date}</p>

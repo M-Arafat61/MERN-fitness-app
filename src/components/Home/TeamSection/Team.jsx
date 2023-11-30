@@ -15,8 +15,10 @@ const Team = () => {
   console.log(trainerData);
   return (
     <Container>
-      <SectionTitle heading={"Our Team"}></SectionTitle>
-      <div className='grid grid-cols-4'>
+      <div className='bg-extended-gray py-5 mb-5 px-3'>
+        <SectionTitle heading={"Our Team"}></SectionTitle>
+      </div>
+      <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4'>
         {trainerData.map(trainer => (
           <div key={trainer._id}>
             <div className='container mx-auto p-4 '>

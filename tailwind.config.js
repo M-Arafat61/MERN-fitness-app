@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         "extended-teal": "#64CCC5",
+        "extended-gray": "#DDE6ED",
       },
     },
   },
